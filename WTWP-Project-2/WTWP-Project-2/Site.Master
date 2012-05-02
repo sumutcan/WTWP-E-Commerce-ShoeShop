@@ -1,0 +1,298 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WTWP_Project_2.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="style.css" type="text/css" rel="stylesheet" />
+<title>Ayakkabıcı</title>
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<form runat="server">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" style="background-repeat:repeat-x; background-position:top; height:100%; background-image:url(images/til_1.jpg) ">
+  <tr>
+    <td width="734" align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="23" align="left" valign="top"><img alt=""  src="images/spacer.gif" width="1" height="23"></td>
+      </tr>
+      <tr>
+        <td height="353" align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr align="left" valign="top">
+            <td width="8"><img alt=""  src="images/left.jpg" width="8" height="342"></td>
+            <td width="252"><div style="padding-left:45px; padding-top:12px"><a href="index.html"><img alt=""  src="images/logo.jpg" width="159" height="97" border="0"></a></div><div style="padding-left:43px; padding-top:30px">
+              <table width="170"  border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                    <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                      <tr align="left" valign="middle">
+                        <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                        <td><a href="#" class="style1">Men</a></td>
+                      </tr>
+                    </table>
+                    </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="#" class="style1">Women</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="index-1.html" class="style1">Child</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="#" class="style1">Accessories</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="index-2.html" class="style1">Product Guide</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="#" class="style1">Specials</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+                <tr>
+                  <td height="27" align="left" valign="middle" style="background-position:bottom ; background-repeat:repeat-x "><div style="padding-left:1px; padding-top:0px">
+                      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="15"><img alt=""  src="images/point_1.jpg" width="6" height="6"></td>
+                          <td><a href="#" class="style1">Free Gifts</a></td>
+                        </tr>
+                      </table>
+                  </div></td>
+                </tr>
+              </table>
+            </div>
+			</td>
+          <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td height="74" align="left" valign="top"><div style="padding-left:0px; padding-top:1px">
+                <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td height="22" align="left" valign="middle" style="border-left:3px solid #898989 "><div style="padding-left:17px; padding-top:0px">
+                      <table width="315"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
+                          <td width="97"><a href="#" class="style2">Kullanıcı Girişi</a></td>
+                          <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
+                          <td width="79"><a href="#" class="style2">Profil</a></td>
+                          <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
+                          <td> <span class="style3"><a href="index-3.html" class="style2">Sepetim</a> (0 ürün)</span></td>
+                        </tr>
+                      </table>
+                      </div></td>
+                  </tr>
+                </table>
+                </div></td>
+            </tr>
+            <tr>
+              <td align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                <tr align="left" valign="top">
+                  <td width="231"><img alt=""  src="images/top_1.jpg" width="231" height="302"></td>
+                  <td><table width="237"  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="76" align="left" valign="top" style="background-image:url(images/form.jpg); background-position:left top; background-repeat:no-repeat "><div style="padding-left:20px; padding-top:17px"><img alt=""  src="images/prod.jpg" width="88" height="9"></div><div style="padding-left:20px; padding-top:5px">
+                        <form action="" style="margin:0px; padding:0px "><table width="188"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td><select name="select" style="width:156px; height:17px; font-family:tahoma; font-size:11px; color:#000000 ">
+                              <option>- all products -</option>
+                            </select></td>
+                            <td align="right"><input type="image" src="images/ok.gif"></td>
+                          </tr>
+                        </table></form>
+                      </div></td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top"><a href="#"><img alt=""  src="images/banner_1.jpg" width="243" height="226" border="0"></a></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+          <tr align="left" valign="top">
+            <td width="243" height="100%" align="right"><table width="214"  border="0" cellspacing="0" cellpadding="0" style="height:100% ">
+              <tr>
+                <td align="left" valign="top"><img alt=""  src="images/kettle_1.jpg" width="214" height="33"></td>
+              </tr>
+              <tr>
+                <td height="100%" align="left" valign="top" bgcolor="#F3F3F3"><div style="padding-left:22px; padding-top:19px">
+                  <table width="170"  border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                        <tr align="left" valign="middle">
+                          <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                          <td><a href="#" class="style5">Custom Boot</a></td>
+                        </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Boots</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Casual</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Boat Shoes</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Sport Casual</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Hiking</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Sport Utility</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Office</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td height="21" align="left" valign="middle" style="background-image:url(images/rep_2.jpg); background-position:bottom; background-repeat:repeat-x "><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                          <tr align="left" valign="middle">
+                            <td width="12"><img alt=""  src="images/point_3.jpg" width="2" height="2" hspace="1"></td>
+                            <td><a href="#" class="style5">Product Care</a></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                  </table>
+                  </div>
+                  <div style="padding-left:23px; padding-top:14px; padding-bottom:21px"><a href="#" class="style6">buraya bir link gelebilir</a></div>
+                  </td>
+              </tr>
+              <tr>
+                <td height="18" align="left" valign="top"><img alt=""  src="images/bot_1.jpg" width="214" height="4"></td>
+              </tr>
+            </table></td>
+            <td height="100%"><asp:ContentPlaceHolder runat="server" ID="MainContent"></asp:ContentPlaceHolder></td>
+          </tr>
+        </table></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><div style="padding-left:29px; padding-top:0px">
+          <table width="700"  border="0" cellspacing="0" cellpadding="0">
+            <tr align="left" valign="top">
+              <td width="6" height="6"><img alt=""  src="images/u_1.jpg" width="6" height="6"></td>
+              <td height="6" style="background-image:url(images/pix_1.jpg); background-position:top; background-repeat:repeat-x "><img alt=""  src="images/pix_1.jpg" width="1" height="1"></td>
+              <td width="6" height="6"><img alt=""  src="images/u_2.jpg" width="6" height="6"></td>
+            </tr>
+            <tr align="left" valign="top">
+              <td height="6" valign="bottom" style="background-image:url(images/pix_1.jpg); background-position:left; background-repeat:repeat-y "><img alt=""  src="images/pix_1.jpg" width="1" height="1"></td>
+              <td height="67"><div style="padding-left:15px; padding-top:14px">
+                <table width="634"  border="0" cellspacing="0" cellpadding="0">
+                  <tr align="left" valign="top">
+                    <td width="120" style="background-image:url(images/div_1.jpg); background-position:top right; background-repeat:no-repeat "><a href="#"><img alt=""  src="images/lo_1.jpg" width="94" height="30" border="0"></a></td>
+                    <td width="140" align="center" style="background-image:url(images/div_1.jpg); background-position:top right; background-repeat:no-repeat "><a href="#"><img alt=""  src="images/lo_2.jpg" width="46" height="37" border="0"></a></td>
+                    <td width="140" align="center" style="background-image:url(images/div_1.jpg); background-position:top right; background-repeat:no-repeat "><a href="#"><img alt=""  src="images/lo_3.jpg" width="68" height="28" border="0"></a></td>
+                    <td width="140" align="center" style="background-image:url(images/div_1.jpg); background-position:top right; background-repeat:no-repeat "><a href="#"><img alt=""  src="images/lo_4.jpg" width="83" height="28" border="0"></a></td>
+                    <td align="right"><a href="#"><img alt=""  src="images/lo_5.jpg" width="56" height="33" border="0"></a></td>
+                  </tr>
+                </table>
+                </div></td>
+              <td height="6" align="right" valign="bottom" style="background-image:url(images/pix_1.jpg); background-position:right; background-repeat:repeat-y "><img alt=""  src="images/pix_1.jpg" width="1" height="1"></td>
+            </tr>
+            <tr align="left" valign="top">
+              <td height="6"><img alt=""  src="images/u_3.jpg" width="6" height="6"></td>
+              <td height="6" valign="bottom" style="background-image:url(images/pix_1.jpg); background-position:bottom; background-repeat:repeat-x "><img alt=""  src="images/pix_1.jpg" width="1" height="1"></td>
+              <td height="6"><img alt=""  src="images/u_4.jpg" width="6" height="6"></td>
+            </tr>
+          </table>
+          </div></td>
+      </tr>
+      <tr>
+        <td align="left" valign="top"><div style="padding-left:65px; padding-top:25px">
+          <table width="642"  border="0" cellspacing="0" cellpadding="0">
+            <tr align="right" valign="top">
+              <td width="428" height="47" style="border-right:1px solid #DBDBDB "><div style="padding-right:27px; padding-top:5px"><span class="style4"><a href="index.html" class="style4">Home</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="index-2.html" class="style4">Product Directory</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="index-4.html" class="style4">My Account</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" class="style4">Easy Returns</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="#" class="style4">Affiliate Program</a></span></div><div style="padding-right:27px; padding-top:7px"><span class="style4">Copyright &copy; <a href="index.html" class="style3">Companyname</a>, 2005. All Rights Reserved</span></div></td>
+              <td valign="middle"><table width="185"  border="0" cellspacing="0" cellpadding="0">
+                <tr align="left" valign="middle">
+                  <td width="74"><a href="#"><img alt=""  src="images/h_1.jpg" width="73" height="24" border="0"></a></td>
+                  <td width="38"><a href="#"><img alt=""  src="images/h_2.jpg" width="36" height="24" border="0"></a></td>
+                  <td width="37"><a href="#"><img alt=""  src="images/h_3.jpg" width="36" height="24" border="0"></a></td>
+                  <td><a href="#"><img alt=""  src="images/h_4.jpg" width="36" height="24" border="0"></a></td>
+                </tr>
+              </table></td>
+            </tr>
+          </table>
+          </div></td>
+      </tr>
+    </table></td>
+    <td style="background-image:url(images/til_1.gif); background-position:top; background-repeat:repeat-x ">&nbsp;</td>
+  </tr>
+</table>
+</form>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color: #FFFFFF;
+	horizontal-align:center;
+}
+.style1 {
+	color: #454545;
+	font-size: 12px;
+	font-family: tahoma;
+	font-weight: bold;
+	text-decoration:none
+}
+.style2 {
+	color: #454545;
+	font-size: 11px;
+	font-family: tahoma;
+	text-decoration:none
+}
+.style3 {
+	color: #798600;
+	font-size: 11px;
+	font-family: tahoma;
+}
+.style4 {
+	color: #828282;
+	font-size: 11px;
+	font-family: tahoma;
+	text-decoration:none
+}
+.style5 {
+	color: #6e6e6e;
+	font-size: 11px;
+	font-family: tahoma;
+	text-decoration:none
+}
+.style6 {
+	color: #c90000;
+	font-size: 11px;
+	font-family: tahoma;
+}
+.style7 {
+	color: #828282;
+	font-size: 12px;
+	font-family: tahoma;
+}
+.style8 {
+	color: #C90000;
+	font-size: 12px;
+	font-family: tahoma;
+}
+.style9 {
+	color: #646464;
+	font-size: 11px;
+	font-family: tahoma;
+	font-weight: bold;
+	text-transform:uppercase
+}
+.btnSatinAl
+{
+	background-image:url("images/buy.jpg");
+	border:none;
+	width:60px;
+	height:16px;
+	color:White;
+	font-size:x-small;
+	text-align:center;
+	text-decoration:none;
+}
+.aSatinAl
+{
+	text-decoration:none;
+}
