@@ -11,7 +11,7 @@ namespace WTWP_Project_2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //pnlKullaniciGiris.Visible = false;
         }
     }
 }
