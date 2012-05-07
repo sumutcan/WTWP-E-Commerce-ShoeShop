@@ -62,6 +62,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassLayer\Adres.cs" />
+    <Compile Include="ClassLayer\Kullanici.cs" />
+    <Compile Include="ClassLayer\KullaniciIslemleriHandler.cs" />
+    <Compile Include="ClassLayer\Telefon.cs" />
+    <Compile Include="DataAccessLayer\KullaniciDB.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
