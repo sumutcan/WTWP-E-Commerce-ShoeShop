@@ -23,5 +23,10 @@ namespace WTWP_Project_2.DataAccessLayer
         {
             throw new NotImplementedException();
         }
+
+        internal static bool kullaniciVarMi(string email)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

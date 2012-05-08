@@ -14,9 +14,14 @@ namespace WTWP_Project_2.ClassLayer
         private string ilce;
         private string postaKodu;
         private string il;
+        private int id;
+        private string baslik;
 
-        public Adres(string mahalle, string sokak, string kapiNo, string daireNo, string ilce, string postaKodu, string il)
+
+        public Adres(int id, string baslik, string mahalle, string sokak, string kapiNo, string daireNo, string ilce, string postaKodu, string il)
         {
+            this.id = id;
+            this.baslik = baslik;
             this.mahalle = mahalle;
             this.sokak = sokak;
             this.kapiNo = kapiNo;
@@ -24,6 +29,7 @@ namespace WTWP_Project_2.ClassLayer
             this.ilce = ilce;
             this.il = il;
             this.postaKodu = postaKodu;
+
         
         }
     }

@@ -10,9 +10,11 @@ namespace WTWP_Project_2.ClassLayer
         private int ilAlanKodu;
         private int ilceKodu;
         private int no;
+        private int id;
 
-        public Telefon(int ilAlanKodu, int ilceKodu, int no)
+        public Telefon(int id, int ilAlanKodu, int ilceKodu, int no)
         {
+            this.id = id;
             this.ilAlanKodu = ilAlanKodu;
             this.ilceKodu = ilceKodu;
             this.no = no;
