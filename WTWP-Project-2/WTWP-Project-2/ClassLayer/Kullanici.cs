@@ -18,10 +18,12 @@ namespace WTWP_Project_2.ClassLayer
         private Telefon evTel;
         private Telefon cepTel;
         ArrayList adresler;
+        Dictionary<int, Urun> sepet;
 
         public Kullanici()
         {
             adresler = new ArrayList();
+            sepet = new Dictionary<int, Urun>();
         }
 
         public string Ad { get { return ad; } set { ad = value; } }
