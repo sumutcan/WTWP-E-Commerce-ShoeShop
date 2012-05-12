@@ -1,31 +1,60 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WTWP_Project_2.Login" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 	<fieldset>
-    	<legend>Personal Info</legend>
+    	<legend>Kayıt Formu</legend>
         <dl>
-        	<dt><label for="email">Email Address:</label></dt>
-            <dd><input type="text" name="email" id="email" size="32" maxlength="128" /></dd>
+        	<dt><label for="txtAd"> Ad:</label></dt>
+            <dd><asp:TextBox ID="txtAd" runat="server" MaxLength="128" Width="185px"></asp:TextBox>
+            <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator3" runat="server" 
+                    ControlToValidate="txtAd" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+
         </dl>
         <dl>
-        	<dt><label for="password">Password:</label></dt>
-            <dd><input type="password" name="password" id="password" size="32" maxlength="32" /></dd>
+        <dt><label for="txtSoyad"> Soyad:</label></dt>
+        <dd><asp:TextBox ID="txtSoyad" runat="server" MaxLength="128" Width="185px"></asp:TextBox><asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator2" runat="server" 
+                    ControlToValidate="txtSoyad" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
         </dl>
         <dl>
-        	<dt><label for="gender">Gender:</label></dt>
+        	<dt><label for="txtEPosta"> E-Posta:</label></dt>
+            <dd><asp:TextBox ID="txtEPosta" runat="server" MaxLength="128" Width="185px"></asp:TextBox><asp:RegularExpressionValidator
+                    ID="RegularExpressionValidator1" runat="server" 
+                    ControlToValidate="txtEposta" 
+                    ValidationExpression="^([0-9a-zA-Z]([-\.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$" 
+                    ErrorMessage="E-posta adresi geçersiz." Display="Dynamic"></asp:RegularExpressionValidator><asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator1" runat="server" 
+                    ControlToValidate="txtEPosta" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+
+        </dl>
+        <dl>
+        	<dt><label for="txtSifre">Şifre:</label></dt>
+            <dd><asp:TextBox
+                    ID="txtSifre" runat="server" MaxLength="32"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator4" runat="server" 
+                    ControlToValidate="txtEPosta" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+        </dl>
+        <dl>
+        	<dt><label for="txtSifreTekrar">Şifre (Tekrar):</label></dt>
+            <dd><asp:TextBox
+                    ID="txtSifreTekrar" runat="server" MaxLength="32"></asp:TextBox>
+                    <asp:RequiredFieldValidator
+                        ID="RequiredFieldValidator5" runat="server" 
+                    ControlToValidate="txtSifreTekrar" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+        </dl>
+        <dl>
+        	<dt><label for="gender">Cinsiyet:</label></dt>
             <dd>
-            	<select size="1" name="gender" id="gender">
-                    <option value="Guy">Guy</option>
-                    <option value="Girl">Girl</option>
-                    <option value="Dude">Dude</option>
-                    <option value="Chic">Chic</option>
-                    <option value="Gentleman">Gentleman</option>
-                    <option value="Lady">Lady</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Don't Ask">Don't Ask</option>
-            	</select>
+                <asp:DropDownList ID="cmbCinsiyetler" runat="server">
+                <asp:ListItem Text="Belirtmek İstemiyorum" Value="null"></asp:ListItem>
+                <asp:ListItem Text="Erkek" Value="E"></asp:ListItem>
+                <asp:ListItem Text="Kadın" Value="K"></asp:ListItem>
+                </asp:DropDownList>
             </dd>
         </dl>
         <dl>
@@ -44,7 +73,7 @@
                     <option value="Oct">Oct</option>
                     <option value="Nov">Nov</option>
                     <option value="Dec">Dec</option>
-                </select>
+                    </select>
                 <select size="1" name="dobDay" id="dobDay">
                 	<option value="01">01</option>
                     <option value="02">02</option>
