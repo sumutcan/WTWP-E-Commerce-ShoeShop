@@ -4,7 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="niceforms-default.css" />
 <link href="style.css" type="text/css" rel="stylesheet" />
+<script language="javascript" type="text/javascript" src="niceforms.js"></script>
+
 <title>Ayakkabıcı</title>
 
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
