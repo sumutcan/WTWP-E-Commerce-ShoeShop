@@ -32,5 +32,7 @@ namespace WTWP_Project_2
                 pnlSepet.Visible = true;
             }
         }
+
+
     }
 }

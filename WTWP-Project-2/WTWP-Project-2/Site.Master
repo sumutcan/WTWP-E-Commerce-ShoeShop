@@ -116,7 +116,7 @@
                             </asp:Panel>
                           <asp:Panel runat="server" ID="pnlSepet">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
-                          <td> <span class="style3"><a href="index-3.html" runat="server" id="lnkSepet" class="style2">Sepetim</a> (0 ürün)</span></td>
+                          <td> <span class="style3"><a href="sepet.aspx" runat="server" id="lnkSepet" class="style2">Sepetim</a> (0 ürün)</span></td>
                           </asp:Panel>
                         </tr>
                       </table>
