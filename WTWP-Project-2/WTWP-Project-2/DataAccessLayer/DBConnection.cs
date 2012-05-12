@@ -41,7 +41,7 @@ namespace WTWP_Project_2.DataAccessLayer
             entityBuilder.ProviderConnectionString = providerString;
 
             // Set the Metadata location.
-            entityBuilder.Metadata =@"res://*/CINECLUP.csdl|res://*/CINECLUP.ssdl|res://*/CINECLUP.msl";
+            entityBuilder.Metadata =@"res://*/ShoeShopEntity.csdl|res://*/ShoeShopEntity.ssdl|res://*/ShoeShopEntity.msl";
 
 
 
