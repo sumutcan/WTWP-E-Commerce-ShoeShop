@@ -9,7 +9,7 @@ namespace WTWP_Project_2.ClassLayer
     public class KullaniciIslemleriHandler
     {
 
-        public void kullaniciKaydet(string ad, string soyad, string email, string sifre, Telefon evTel, Telefon cepTel)
+        public void kullaniciKaydet(string ad, string soyad, string email, string sifre, Telefon evTel, Telefon cepTel, char cinsiyet, int dogumYili)
         { 
             //email formatı kontroller üzerinde, aynı emailin olup olmadığı da db üzerinde kontrol edilebilir.
 
@@ -20,6 +20,8 @@ namespace WTWP_Project_2.ClassLayer
             yeniKullanici.Sifre = sifre;
             yeniKullanici.EvTel = evTel;
             yeniKullanici.CepTel = cepTel;
+            yeniKullanici.Cinsiyet = cinsiyet;
+            yeniKullanici.DogumYili = dogumYili;
 
             yeniKullanici.kaydet();
 

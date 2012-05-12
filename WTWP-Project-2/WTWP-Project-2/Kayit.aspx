@@ -1,10 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WTWP_Project_2.Login" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Kayit.aspx.cs" Inherits="WTWP_Project_2.Login" %>
 
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-	<fieldset>
+    <fieldset>
     	<legend>Kayıt Formu</legend>
         <dl>
         	<dt><label for="txtAd"> Ad:</label></dt>
@@ -34,7 +34,7 @@
         <dl>
         	<dt><label for="txtSifre">Şifre:</label></dt>
             <dd><asp:TextBox
-                    ID="txtSifre" runat="server" MaxLength="32"></asp:TextBox>
+                    ID="txtSifre" TextMode="Password" runat="server" MaxLength="32"></asp:TextBox>
                     <asp:RequiredFieldValidator
                         ID="RequiredFieldValidator4" runat="server" 
                     ControlToValidate="txtEPosta" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
@@ -42,7 +42,7 @@
         <dl>
         	<dt><label for="txtSifreTekrar">Şifre (Tekrar):</label></dt>
             <dd><asp:TextBox
-                    ID="txtSifreTekrar" runat="server" MaxLength="32"></asp:TextBox>
+                    ID="txtSifreTekrar" TextMode="Password" runat="server" MaxLength="32"></asp:TextBox>
                     <asp:RequiredFieldValidator
                         ID="RequiredFieldValidator5" runat="server" 
                     ControlToValidate="txtSifreTekrar" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
@@ -51,63 +51,16 @@
         	<dt><label for="gender">Cinsiyet:</label></dt>
             <dd>
                 <asp:DropDownList ID="cmbCinsiyetler" runat="server">
-                <asp:ListItem Text="Belirtmek İstemiyorum" Value="null"></asp:ListItem>
+                <asp:ListItem Text="Belirtmek İstemiyorum" Value="X"></asp:ListItem>
                 <asp:ListItem Text="Erkek" Value="E"></asp:ListItem>
                 <asp:ListItem Text="Kadın" Value="K"></asp:ListItem>
                 </asp:DropDownList>
             </dd>
         </dl>
         <dl>
-        	<dt><label for="dobMonth">Date of Birth:</label></dt>
+        	<dt><label for="dobYear">Doğum yılı:</label></dt>
             <dd>
-            	<select size="1" name="dobMonth" id="dobMonth">
-                	<option value="Jan">Jan</option>
-                    <option value="Feb">Feb</option>
-                    <option value="Mar">Mar</option>
-                    <option value="Apr">Apr</option>
-                    <option value="May">May</option>
-                    <option value="Jun">Jun</option>
-                    <option value="Jul">Jul</option>
-                    <option value="Aug">Aug</option>
-                    <option value="Sep">Sep</option>
-                    <option value="Oct">Oct</option>
-                    <option value="Nov">Nov</option>
-                    <option value="Dec">Dec</option>
-                    </select>
-                <select size="1" name="dobDay" id="dobDay">
-                	<option value="01">01</option>
-                    <option value="02">02</option>
-                    <option value="03">03</option>
-                    <option value="04">04</option>
-                    <option value="05">05</option>
-                    <option value="06">06</option>
-                    <option value="07">07</option>
-                    <option value="08">08</option>
-                    <option value="09">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                    <option value="13">13</option>
-                    <option value="14">14</option>
-                    <option value="15">15</option>
-                    <option value="16">16</option>
-                    <option value="17">17</option>
-                    <option value="18">18</option>
-                    <option value="19">19</option>
-                    <option value="20">20</option>
-                    <option value="21">21</option>
-                    <option value="22">22</option>
-                    <option value="23">23</option>
-                    <option value="24">24</option>
-                    <option value="25">25</option>
-                    <option value="26">26</option>
-                    <option value="27">27</option>
-                    <option value="28">28</option>
-                    <option value="29">29</option>
-                    <option value="30">30</option>
-                    <option value="31">31</option>
-                </select>
-                <select size="1" name="dobYear" id="dobYear">
+                <select size="1" runat="server" name="dobYear" id="dobYear">
                 	<option value="2000">2000</option>
                     <option value="1999">1999</option>
                     <option value="1998">1998</option>
@@ -162,5 +115,44 @@
                 </select>
             </dd>
         </dl>
+        <dl>
+        <dt><label for="txtAlanKoduEv">Sabit Telefon:</label></dt>
+        <dd>
+        <asp:TextBox ID="txtAlanKoduEv" runat="server" MaxLength="3"  
+                Width="39px"></asp:TextBox>
+        <asp:FilteredTextBoxExtender runat="server" TargetControlID="txtAlanKoduEv" FilterType="Numbers"></asp:FilteredTextBoxExtender> - 
+            <asp:TextBox ID="txtTelNoEv" runat="server" MaxLength="7" 
+                Width="78px"></asp:TextBox>
+            <asp:MaskedEditExtender
+                ID="MaskedEditExtender1" TargetControlID="txtTelNoEv" runat="server" MaskType="Number" Mask="9999999" >
+            </asp:MaskedEditExtender>
+
+
+        </dd>
+            
+        </dl>
+                <dl>
+        <dt><label for="txtAlanKoduCep">Mobil Telefon:</label></dt>
+        <dd>
+        <asp:TextBox ID="txtAlanKoduCep" runat="server" MaxLength="3"  
+                Width="39px"></asp:TextBox>
+        <asp:FilteredTextBoxExtender ID="FilteredTextBoxExtender1" runat="server" TargetControlID="txtAlanKoduCep" FilterType="Numbers"></asp:FilteredTextBoxExtender> - 
+            <asp:TextBox ID="txtTelNoCep" runat="server" MaxLength="7" 
+                Width="78px"></asp:TextBox>
+            <asp:MaskedEditExtender
+                ID="MaskedEditExtender2" TargetControlID="txtTelNoCep" runat="server" MaskType="Number" Mask="9999999" >
+            </asp:MaskedEditExtender>
+
+
+        </dd>
+            
+        </dl>
+        <dl>
+        <dd>    	
+            <asp:Button ID="btnGonder"
+            runat="server" CssClass="NFButton" Text="Gönder" onclick="btnGonder_Click" /></dd>
+        </dl>
+
     </fieldset>
+
 </asp:Content>

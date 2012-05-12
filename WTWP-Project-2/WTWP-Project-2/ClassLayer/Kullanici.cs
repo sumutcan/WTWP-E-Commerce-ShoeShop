@@ -17,6 +17,8 @@ namespace WTWP_Project_2.ClassLayer
         private string email;
         private Telefon evTel;
         private Telefon cepTel;
+        private char cinsiyet;
+        private int dogumYili;
         ArrayList adresler;
         Dictionary<int, Urun> sepet;
 
@@ -26,6 +28,20 @@ namespace WTWP_Project_2.ClassLayer
             sepet = new Dictionary<int, Urun>();
         }
 
+        public char Cinsiyet
+        {
+            get { return cinsiyet; }
+            set 
+            {
+                cinsiyet = value; 
+            }
+        }
+
+        public int DogumYili
+        {
+            get { return dogumYili; }
+            set { dogumYili = value; }
+        }
         public string Ad { get { return ad; } set { ad = value; } }
 
         public string Soyad { get { return soyad; } set { soyad = value; } }

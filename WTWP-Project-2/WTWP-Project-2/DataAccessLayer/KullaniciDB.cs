@@ -11,7 +11,9 @@ namespace WTWP_Project_2.DataAccessLayer
 
         public static void ekle(Kullanici obj)
         {
-            throw new NotImplementedException();
+
+            throw new NotImplementedException(); 
+
         }
 
         public static void sil(int id)

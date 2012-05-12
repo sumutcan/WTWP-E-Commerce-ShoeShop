@@ -115,7 +115,7 @@
                           <asp:Panel runat="server" ID="pnlKayitProfil">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
                           <td width="79">
-                            <asp:LinkButton ID="lnkKayitProfil" CssClass="style2" runat="server">Kayıt</asp:LinkButton></td>
+                            <asp:LinkButton ID="lnkKayitProfil" CausesValidation="False" CssClass="style2" runat="server">Kayıt</asp:LinkButton></td>
                             </asp:Panel>
                           <asp:Panel runat="server" ID="pnlSepet">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
@@ -247,6 +247,8 @@
                 <td height="18" align="left" valign="top"><img alt=""  src="images/bot_1.jpg" width="214" height="4"></td>
               </tr>
             </table></td>
+              <asp:ScriptManager ID="ScriptManager1" runat="server">
+              </asp:ScriptManager>
             <td height="100%"><asp:ContentPlaceHolder runat="server" ID="MainContent"></asp:ContentPlaceHolder></td>
           </tr>
         </table></td>

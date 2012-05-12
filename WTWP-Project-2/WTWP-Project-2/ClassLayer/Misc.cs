@@ -14,6 +14,7 @@ namespace WTWP_Project_2.ClassLayer
         private SmtpClient sc;
 
         public const string GecerliKullanici = "GecerliKullanici";
+        public const string KullaniciIslemleriHandler = "KullaniciIslemleriHandler";
 
         public static Misc getInstance()
         {

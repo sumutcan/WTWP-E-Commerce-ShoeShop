@@ -7,17 +7,16 @@ namespace WTWP_Project_2.ClassLayer
 {
     public class Telefon
     {
-        private int ilAlanKodu;
-        private int ilceKodu;
-        private int no;
+        private string alanKodu;
+        
+        private string no;
         private int id;
 
-        public Telefon(int id, int ilAlanKodu, int ilceKodu, int no)
+        public Telefon(int id, string alanKodu, string no)
         {
             this.id = id;
-            this.ilAlanKodu = ilAlanKodu;
-            this.ilceKodu = ilceKodu;
             this.no = no;
+            this.alanKodu = alanKodu;
         }
     }
 }
