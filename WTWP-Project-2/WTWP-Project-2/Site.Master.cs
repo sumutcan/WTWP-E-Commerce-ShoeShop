@@ -13,5 +13,7 @@ namespace WTWP_Project_2
         {
             //pnlKullaniciGiris.Visible = false;
         }
+
+
     }
 }

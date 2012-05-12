@@ -62,5 +62,15 @@ namespace WTWP_Project_2.ClassLayer
         {
             //kullanıcıyı veritabanından çek. null dönerse hata ver, dönmezse kullanıcı nesnesi döndür.
         }
+
+        public void sepeteEkle(Urun yeniUrun)
+        {
+            sepet.Add(yeniUrun.ProductID,yeniUrun);
+        }
+
+        public void sepettenCikar(int urunID)
+        {
+            sepet.Remove(urunID);
+        }
     }
 }
