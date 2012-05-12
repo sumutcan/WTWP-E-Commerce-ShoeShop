@@ -62,5 +62,22 @@ namespace WTWP_Project_2.ClassLayer
         {
             //kullanıcıyı veritabanından çek. null dönerse hata ver, dönmezse kullanıcı nesnesi döndür.
         }
+
+        public void sifremiUnuttum()
+        {
+            string yeniSifre = FormsAuthentication.HashPasswordForStoringInConfigFile(DateTime.Now.Ticks.ToString(), "md5").Substring(0, 6);
+
+            //yenisifreyi veritabanına yolla eposta ile beraber. şayet epostaya ait kullanıcı varsa güncelle. yoksa hata döndür.
+
+            string mesaj = "Aldığımız bir duyuma göre şifrenizi unutmuşsunuz.<p>" +
+                            "Yeni şifreniz: " + yeniSifre + "<p>" +
+                            "Broadway Sinemaları";
+
+            this.Sifre = yeniSifre;
+
+            KullaniciDB.sifreSifirla(this);
+
+            Misc.getInstance().mailgonder(email, "Yeni şifre", mesaj);
+        }
     }
 }

@@ -49,13 +49,13 @@ namespace WTWP_Project_2 {
         protected global::System.Web.UI.WebControls.Panel pnlKayitProfil;
         
         /// <summary>
-        /// lnkGiris control.
+        /// lnkKayitProfil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lnkGiris;
+        protected global::System.Web.UI.WebControls.LinkButton lnkKayitProfil;
         
         /// <summary>
         /// pnlSepet control.
@@ -65,6 +65,15 @@ namespace WTWP_Project_2 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel pnlSepet;
+        
+        /// <summary>
+        /// lnkSepet control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSepet;
         
         /// <summary>
         /// MainContent control.

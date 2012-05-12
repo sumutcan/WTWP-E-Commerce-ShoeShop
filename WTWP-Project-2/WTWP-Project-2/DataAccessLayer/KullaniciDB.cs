@@ -24,7 +24,12 @@ namespace WTWP_Project_2.DataAccessLayer
             throw new NotImplementedException();
         }
 
-        internal static bool kullaniciVarMi(string email)
+        public static bool kullaniciVarMi(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static void sifreSifirla(Kullanici kullanici)
         {
             throw new NotImplementedException();
         }

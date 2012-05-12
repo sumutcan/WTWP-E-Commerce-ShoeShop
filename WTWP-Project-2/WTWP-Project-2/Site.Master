@@ -107,16 +107,16 @@
                         <tr align="left" valign="middle">
                           <asp:Panel runat="server" ID="pnlKullaniciGiris">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
-                          <td width="97"><a href="#" class="style2" runat="server" id="lnkKullaniciGirisi">Kullanıcı Girişi</a></td>
+                          <td width="97"><a href="Login.aspx" class="style2" runat="server" id="lnkKullaniciGirisi">Kullanıcı Girişi</a></td>
                           </asp:Panel>
                           <asp:Panel runat="server" ID="pnlKayitProfil">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
                           <td width="79">
-                            <asp:LinkButton ID="lnkGiris" CssClass="style2" runat="server">Kayıt</asp:LinkButton></td>
+                            <asp:LinkButton ID="lnkKayitProfil" CssClass="style2" runat="server">Kayıt</asp:LinkButton></td>
                             </asp:Panel>
                           <asp:Panel runat="server" ID="pnlSepet">
                           <td width="8"><img alt=""  src="images/point_2.jpg" width="3" height="3"></td>
-                          <td> <span class="style3"><a href="index-3.html" class="style2">Sepetim</a> (0 ürün)</span></td>
+                          <td> <span class="style3"><a href="index-3.html" runat="server" id="lnkSepet" class="style2">Sepetim</a> (0 ürün)</span></td>
                           </asp:Panel>
                         </tr>
                       </table>
