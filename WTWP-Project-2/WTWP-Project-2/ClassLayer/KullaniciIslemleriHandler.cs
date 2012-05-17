@@ -13,18 +13,22 @@ namespace WTWP_Project_2.ClassLayer
         { 
             //email formatı kontroller üzerinde, aynı emailin olup olmadığı da db üzerinde kontrol edilebilir.
 
-            Kullanici yeniKullanici = new Kullanici();
-            yeniKullanici.Ad = ad;
-            yeniKullanici.Soyad = soyad;
-            yeniKullanici.Email = email;
-            yeniKullanici.Sifre = sifre;
-            yeniKullanici.EvTel = evTel;
-            yeniKullanici.CepTel = cepTel;
-            yeniKullanici.Cinsiyet = cinsiyet;
-            yeniKullanici.DogumYili = dogumYili;
+            
+                
 
-            KullaniciDB.ekle(yeniKullanici);
-                        
+                Kullanici yeniKullanici = new Kullanici();
+                yeniKullanici.Ad = ad;
+                yeniKullanici.Soyad = soyad;
+                yeniKullanici.Email = email;
+                yeniKullanici.Sifre = sifre;
+                yeniKullanici.EvTel = evTel;
+                yeniKullanici.CepTel = cepTel;
+                yeniKullanici.Cinsiyet = cinsiyet;
+                yeniKullanici.DogumYili = dogumYili;
+
+                KullaniciDB.ekle(yeniKullanici);
+
+                      
 
 
         }

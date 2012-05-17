@@ -13,6 +13,7 @@ namespace WTWP_Project_2.DataAccessLayer
         string serverName = ".";
         string databaseName = "SHOESHOP";
         private SHOESHOPEntities entity;
+        
         public DBConnection()
         {
             // Specify the provider name, server and database.

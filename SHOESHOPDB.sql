@@ -1,12 +1,12 @@
 USE [SHOESHOP]
 GO
-/****** Object:  Table [dbo].[PRODUCER]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[PRODUCER]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[PRODUCER](
-	[ProducerID] [int] NOT NULL,
+	[ProducerID] [int] IDENTITY(1,1) NOT NULL,
 	[ProducerName] [nvarchar](max) NOT NULL,
 	[Phone] [nvarchar](max) NULL,
 	[Email] [nvarchar](max) NOT NULL,
@@ -18,13 +18,13 @@ CREATE TABLE [dbo].[PRODUCER](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PHONE]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[PHONE]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[PHONE](
-	[PhoneID] [int] NOT NULL,
+	[PhoneID] [int] IDENTITY(1,1) NOT NULL,
 	[AreaCode] [nvarchar](3) NOT NULL,
 	[PhoneNumber] [nvarchar](7) NOT NULL,
  CONSTRAINT [PK_PHONE] PRIMARY KEY CLUSTERED 
@@ -33,7 +33,15 @@ CREATE TABLE [dbo].[PHONE](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PERSON]    Script Date: 05/17/2012 23:24:38 ******/
+SET IDENTITY_INSERT [dbo].[PHONE] ON
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (5, N'343', N'2342423')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (6, N'345', N'3545454')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (7, N'', N'')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (8, N'', N'')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (9, N'343', N'3343434')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (10, N'343', N'3434343')
+SET IDENTITY_INSERT [dbo].[PHONE] OFF
+/****** Object:  Table [dbo].[PERSON]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -41,7 +49,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[PERSON](
-	[Pno] [int] NOT NULL,
+	[Pno] [int] IDENTITY(1,1) NOT NULL,
 	[Name] [varchar](25) NOT NULL,
 	[Surname] [varchar](25) NOT NULL,
 	[Email] [nvarchar](max) NOT NULL,
@@ -55,7 +63,12 @@ CREATE TABLE [dbo].[PERSON](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[PAYMENTTYPE]    Script Date: 05/17/2012 23:24:38 ******/
+SET IDENTITY_INSERT [dbo].[PERSON] ON
+INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (4, N'asdasdsad', N'sadadasd', N'asdasd@asdasd.com', N'E10ADC3949BA59ABBE56E057F20F883E', CAST(0x0000A05500095F15 AS DateTime))
+INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (5, N'fgdfgdfg', N'sfsf', N'dsfsdf@dasdsf.com', N'E10ADC3949BA59ABBE56E057F20F883E', CAST(0x0000A055000AADCF AS DateTime))
+INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (6, N'adad', N'asdasd', N'asdasd@asdasd.com', N'96E79218965EB72C92A549DD5A330112', CAST(0x0000A055000B44DA AS DateTime))
+SET IDENTITY_INSERT [dbo].[PERSON] OFF
+/****** Object:  Table [dbo].[PAYMENTTYPE]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -70,13 +83,13 @@ CREATE TABLE [dbo].[PAYMENTTYPE](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CITY]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[CITY]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[CITY](
-	[CityID] [int] NOT NULL,
+	[CityID] [int] IDENTITY(1,1) NOT NULL,
 	[CityCode] [int] NOT NULL,
 	[CityName] [nvarchar](max) NOT NULL,
  CONSTRAINT [PK_CITY] PRIMARY KEY CLUSTERED 
@@ -85,6 +98,7 @@ CREATE TABLE [dbo].[CITY](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[CITY] ON
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (1, 1, N'Adana')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (2, 2, N'Adýyaman')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (3, 3, N'Afyon')
@@ -166,7 +180,8 @@ INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (78, 78, N'Karabük
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (79, 79, N'Kilis')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (80, 80, N'Osmaniye')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (81, 81, N'Düzce')
-/****** Object:  Table [dbo].[CAMPAIGN]    Script Date: 05/17/2012 23:24:38 ******/
+SET IDENTITY_INSERT [dbo].[CITY] OFF
+/****** Object:  Table [dbo].[CAMPAIGN]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -183,7 +198,7 @@ CREATE TABLE [dbo].[CAMPAIGN](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CARGO]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[CARGO]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,13 +213,13 @@ CREATE TABLE [dbo].[CARGO](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[PRODUCT](
-	[ProductID] [int] NOT NULL,
+	[ProductID] [int] IDENTITY(1,1) NOT NULL,
 	[ProducerID] [int] NOT NULL,
 	[Model] [nchar](10) NOT NULL,
 	[Type] [int] NOT NULL,
@@ -217,13 +232,13 @@ CREATE TABLE [dbo].[PRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DISTRICT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[DISTRICT]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
 CREATE TABLE [dbo].[DISTRICT](
-	[DistrictID] [int] NOT NULL,
+	[DistrictID] [int] IDENTITY(1,1) NOT NULL,
 	[CityCode] [int] NOT NULL,
 	[DistrictCode] [int] NOT NULL,
 	[DistrictName] [nvarchar](max) NOT NULL,
@@ -233,6 +248,7 @@ CREATE TABLE [dbo].[DISTRICT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[DISTRICT] ON
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (1, 1, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (2, 1, 20, N'ALADAG')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (3, 1, 28, N'CEYHAN')
@@ -333,9 +349,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (98, 8, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (99, 8, 20, N'ARDANUÇ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (100, 8, 25, N'ARHAVI')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (101, 8, 30, N'BORÇKA')
 GO
 print 'Processed 100 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (101, 8, 30, N'BORÇKA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (102, 8, 32, N'HOPA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (103, 8, 35, N'MURGUL')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (104, 8, 45, N'SAVSAT')
@@ -436,9 +452,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (199, 16, 72, N'ORHANELI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (200, 16, 76, N'ORHANGAZI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (201, 16, 80, N'OSMANGAZI')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (202, 16, 84, N'YENISEHIR')
 GO
 print 'Processed 200 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (202, 16, 84, N'YENISEHIR')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (203, 16, 88, N'YILDIRIM')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (204, 17, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (205, 17, 25, N'AYVACIK')
@@ -539,9 +555,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (300, 24, 40, N'KEMALIYE')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (301, 24, 45, N'OTLUKBELI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (302, 24, 50, N'REFAHIYE')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (303, 24, 55, N'TERCAN')
 GO
 print 'Processed 300 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (303, 24, 55, N'TERCAN')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (304, 24, 60, N'ÜZÜMLÜ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (305, 25, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (306, 25, 23, N'ASKALE')
@@ -642,9 +658,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (401, 33, 30, N'AYDINCIK')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (402, 33, 35, N'BOZYAZI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (403, 33, 40, N'ÇAMLIYAYLA')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (404, 33, 45, N'ERDEMLI')
 GO
 print 'Processed 400 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (404, 33, 45, N'ERDEMLI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (405, 33, 50, N'GÜLNAR')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (406, 33, 55, N'MUT')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (407, 33, 60, N'SILIFKE')
@@ -745,9 +761,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (502, 38, 28, N'BÜNYAN')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (503, 38, 32, N'DEVELI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (504, 38, 36, N'FELAHIYE')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (505, 38, 40, N'HACILAR')
 GO
 print 'Processed 500 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (505, 38, 40, N'HACILAR')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (506, 38, 44, N'INCESU')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (507, 38, 48, N'KOCASINAN')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (508, 38, 52, N'MELIKGAZI')
@@ -848,9 +864,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (603, 45, 40, N'DEMIRCI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (604, 45, 45, N'GÖLMARMARA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (605, 45, 50, N'GÖRDES')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (606, 45, 55, N'KIRKAGAÇ')
 GO
 print 'Processed 600 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (606, 45, 55, N'KIRKAGAÇ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (607, 45, 60, N'KÖPRÜBASI')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (608, 45, 65, N'KULA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (609, 45, 70, N'SALIHLI')
@@ -951,9 +967,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (704, 54, 50, N'KARASU')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (705, 54, 55, N'KAYNARCA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (706, 54, 60, N'KOCAALI')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (707, 54, 65, N'PAMUKOVA')
 GO
 print 'Processed 700 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (707, 54, 65, N'PAMUKOVA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (708, 54, 70, N'SAPANCA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (709, 54, 75, N'SÖGÜTLÜ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (710, 54, 80, N'TARAKLI')
@@ -1054,9 +1070,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (805, 62, 50, N'PERTEK')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (806, 62, 55, N'PÜLÜMÜR')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (807, 63, 0, N'MERKEZ')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (808, 63, 25, N'AKÇAKALE')
 GO
 print 'Processed 800 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (808, 63, 25, N'AKÇAKALE')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (809, 63, 30, N'BIRECIK')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (810, 63, 35, N'BOZOVA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (811, 63, 40, N'CEYLANPINAR')
@@ -1157,9 +1173,9 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (906, 76, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (907, 76, 25, N'ARALIK')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (908, 76, 50, N'KARAKOYUNLU')
-INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (909, 76, 75, N'TUZLUCA')
 GO
 print 'Processed 900 total records'
+INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (909, 76, 75, N'TUZLUCA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (910, 77, 0, N'MERKEZ')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (911, 77, 10, N'ALTINOVA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (912, 77, 15, N'ARMUTLU')
@@ -1194,7 +1210,8 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (941, 3, 0, N'SINANPASA')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (942, 9, 0, N'DIDIM')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (943, 41, 0, N'DERINCE')
-/****** Object:  Table [dbo].[CUSTOMER]    Script Date: 05/17/2012 23:24:38 ******/
+SET IDENTITY_INSERT [dbo].[DISTRICT] OFF
+/****** Object:  Table [dbo].[CUSTOMER]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1215,7 +1232,10 @@ CREATE TABLE [dbo].[CUSTOMER](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[ADMIN]    Script Date: 05/17/2012 23:24:38 ******/
+INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (4, 1991, 5, 6, N'X')
+INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (5, 2000, 7, 8, N'E')
+INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (6, 2000, 9, 10, N'E')
+/****** Object:  Table [dbo].[ADMIN]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1229,7 +1249,7 @@ CREATE TABLE [dbo].[ADMIN](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[INVENTORY]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[INVENTORY]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1245,7 +1265,7 @@ CREATE TABLE [dbo].[INVENTORY](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CARTPRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[CARTPRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1260,7 +1280,7 @@ CREATE TABLE [dbo].[CARTPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ADDRESS]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[ADDRESS]    Script Date: 05/18/2012 00:45:59 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1268,7 +1288,7 @@ GO
 SET ANSI_PADDING ON
 GO
 CREATE TABLE [dbo].[ADDRESS](
-	[AddressID] [int] NOT NULL,
+	[AddressID] [int] IDENTITY(1,1) NOT NULL,
 	[Pno] [int] NOT NULL,
 	[CityID] [int] NOT NULL,
 	[DistrictID] [int] NOT NULL,
@@ -1284,7 +1304,95 @@ CREATE TABLE [dbo].[ADDRESS](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  Table [dbo].[CAMPAIGNPRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  StoredProcedure [dbo].[AddCustomer]    Script Date: 05/18/2012 00:46:00 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE proc [dbo].[AddCustomer]
+(
+	@name varchar(25),
+	@surname varchar(25),
+	@email nvarchar(max),
+	@password nvarchar(max),
+	@yearOfBirth int,
+	@gender char(1),
+	@homeAreaCode varchar(3),
+	@homeNumber varchar(7),
+	@mobileAreaCode varchar(3),
+	@mobileNumber varchar(7)
+	
+	
+)
+AS
+BEGIN TRAN
+
+INSERT INTO PERSON (Name,Surname, Email, Person.Password, RegisterDate) 
+VALUES (@name, @surname, @email, @password, GETDATE())
+
+IF @@ERROR <> 0
+ BEGIN
+    -- Rollback the transaction
+    ROLLBACK
+
+    -- Raise an error and return
+    RAISERROR ('Kiþi bilgilerini kaydederken bir hata oluþtu.', 16, 1)
+    RETURN
+ END
+ 
+DECLARE @Pno int
+
+set @Pno = @@IDENTITY
+
+INSERT INTO PHONE (AreaCode,PhoneNumber) VALUES (@homeAreaCode, @homeNumber)
+
+
+IF @@ERROR <> 0
+ BEGIN
+    -- Rollback the transaction
+    ROLLBACK
+
+    -- Raise an error and return
+    RAISERROR ('Ev telefonunu kaydaderken hata oluþtu.', 16, 2)
+    RETURN
+ END
+ 
+DECLARE @homePhoneID int
+
+set @homePhoneID = @@IDENTITY
+
+INSERT INTO PHONE (AreaCode,PhoneNumber) VALUES (@mobileAreaCode, @mobileNumber)
+
+IF @@ERROR <> 0
+ BEGIN
+    -- Rollback the transaction
+    ROLLBACK
+
+    -- Raise an error and return
+    RAISERROR ('Cep telefonunu kaydaderken hata oluþtu.', 16, 3)
+    RETURN
+ END
+ 
+DECLARE @mobilePhoneID int
+
+set @mobilePhoneID = @@IDENTITY
+
+INSERT INTO CUSTOMER (Pno, YearOfBirth, HomePhoneID, MobilePhoneID, Gender)
+VALUES (@Pno, @yearOfBirth, @homePhoneID, @mobilePhoneID, @gender)
+
+IF @@ERROR <> 0
+ BEGIN
+    -- Rollback the transaction
+    ROLLBACK
+
+    -- Raise an error and return
+    RAISERROR ('Müþteri bilgilerini kaydederken hata oluþtu.', 16, 4)
+    RETURN
+ END
+ 
+ COMMIT
+GO
+/****** Object:  Table [dbo].[CAMPAIGNPRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1299,7 +1407,7 @@ CREATE TABLE [dbo].[CAMPAIGNPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SALE]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[SALE]    Script Date: 05/18/2012 00:46:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1316,7 +1424,7 @@ CREATE TABLE [dbo].[SALE](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SALEPRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  Table [dbo].[SALEPRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1331,121 +1439,121 @@ CREATE TABLE [dbo].[SALEPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT_PRODUCER]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_PRODUCT_PRODUCER]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[PRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT_PRODUCER] FOREIGN KEY([ProducerID])
 REFERENCES [dbo].[PRODUCER] ([ProducerID])
 GO
 ALTER TABLE [dbo].[PRODUCT] CHECK CONSTRAINT [FK_PRODUCT_PRODUCER]
 GO
-/****** Object:  ForeignKey [FK_DISTRICT_CITY]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_DISTRICT_CITY]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[DISTRICT]  WITH CHECK ADD  CONSTRAINT [FK_DISTRICT_CITY] FOREIGN KEY([CityCode])
 REFERENCES [dbo].[CITY] ([CityID])
 GO
 ALTER TABLE [dbo].[DISTRICT] CHECK CONSTRAINT [FK_DISTRICT_CITY]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PERSON]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PERSON]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PHONE]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PHONE]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PHONE] FOREIGN KEY([HomePhoneID])
 REFERENCES [dbo].[PHONE] ([PhoneID])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PHONE]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PHONE1]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PHONE1]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PHONE1] FOREIGN KEY([MobilePhoneID])
 REFERENCES [dbo].[PHONE] ([PhoneID])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PHONE1]
 GO
-/****** Object:  ForeignKey [FK_ADMIN_PERSON]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_ADMIN_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[ADMIN]  WITH CHECK ADD  CONSTRAINT [FK_ADMIN_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[ADMIN] CHECK CONSTRAINT [FK_ADMIN_PERSON]
 GO
-/****** Object:  ForeignKey [FK_INVENTORY_PRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_INVENTORY_PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[INVENTORY]  WITH CHECK ADD  CONSTRAINT [FK_INVENTORY_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[INVENTORY] CHECK CONSTRAINT [FK_INVENTORY_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_CARTPRODUCT_CUSTOMER]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CARTPRODUCT_CUSTOMER]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[CARTPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CARTPRODUCT_CUSTOMER] FOREIGN KEY([Pno])
 REFERENCES [dbo].[CUSTOMER] ([Pno])
 GO
 ALTER TABLE [dbo].[CARTPRODUCT] CHECK CONSTRAINT [FK_CARTPRODUCT_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_CARTPRODUCT_PRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CARTPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[CARTPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CARTPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[CARTPRODUCT] CHECK CONSTRAINT [FK_CARTPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_CITY]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_CITY]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_CITY] FOREIGN KEY([CityID])
 REFERENCES [dbo].[CITY] ([CityID])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_CITY]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_DISTRICT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_DISTRICT]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_DISTRICT] FOREIGN KEY([DistrictID])
 REFERENCES [dbo].[DISTRICT] ([DistrictID])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_DISTRICT]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_PERSON]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_PERSON]
 GO
-/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_CAMPAIGN]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_CAMPAIGN]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CAMPAIGNPRODUCT_CAMPAIGN] FOREIGN KEY([CampaignID])
 REFERENCES [dbo].[CAMPAIGN] ([CampaignID])
 GO
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT] CHECK CONSTRAINT [FK_CAMPAIGNPRODUCT_CAMPAIGN]
 GO
-/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_PRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CAMPAIGNPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT] CHECK CONSTRAINT [FK_CAMPAIGNPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_SALE_ADDRESS]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALE_ADDRESS]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_ADDRESS] FOREIGN KEY([AddressID])
 REFERENCES [dbo].[ADDRESS] ([AddressID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_ADDRESS]
 GO
-/****** Object:  ForeignKey [FK_SALE_CARGO]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALE_CARGO]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_CARGO] FOREIGN KEY([CargoID])
 REFERENCES [dbo].[CARGO] ([CargoID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_CARGO]
 GO
-/****** Object:  ForeignKey [FK_SALE_CUSTOMER]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALE_CUSTOMER]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_CUSTOMER] FOREIGN KEY([Pno])
 REFERENCES [dbo].[CUSTOMER] ([Pno])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_SALE_PAYMENTTYPE]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALE_PAYMENTTYPE]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_PAYMENTTYPE] FOREIGN KEY([PaymentTypeID])
 REFERENCES [dbo].[PAYMENTTYPE] ([PaymentTypeID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_PAYMENTTYPE]
 GO
-/****** Object:  ForeignKey [FK_SALEPRODUCT_PRODUCT]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALEPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALEPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_SALEPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[SALEPRODUCT] CHECK CONSTRAINT [FK_SALEPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_SALEPRODUCT_SALE]    Script Date: 05/17/2012 23:24:38 ******/
+/****** Object:  ForeignKey [FK_SALEPRODUCT_SALE]    Script Date: 05/18/2012 00:46:00 ******/
 ALTER TABLE [dbo].[SALEPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_SALEPRODUCT_SALE] FOREIGN KEY([SaleID])
 REFERENCES [dbo].[SALE] ([SaleID])
 GO
