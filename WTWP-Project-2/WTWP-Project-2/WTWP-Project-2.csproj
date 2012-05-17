@@ -73,9 +73,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassLayer\Adres.cs" />
+    <Compile Include="ClassLayer\Kampanya.cs" />
+    <Compile Include="ClassLayer\Kargo.cs" />
     <Compile Include="ClassLayer\Kullanici.cs" />
     <Compile Include="ClassLayer\KullaniciIslemleriHandler.cs" />
     <Compile Include="ClassLayer\Misc.cs" />
+    <Compile Include="ClassLayer\OdemeTipi.cs" />
     <Compile Include="ClassLayer\Telefon.cs" />
     <Compile Include="ClassLayer\Urun.cs" />
     <Compile Include="DataAccessLayer\DBConnection.cs" />
