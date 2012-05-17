@@ -73,3 +73,20 @@ body {
 {
 	text-decoration:none;
 }
+.hata
+{
+    margin: 1px 0px 1px 0px;
+    background-color:#F7A6A6;
+    color:Maroon;
+    font-family:Segoe UI;
+    font-weight:bold;
+}
+
+.bilgi
+{
+    margin: 1px 0px 1px 0px;
+    background-color:#B3A8F0;
+    color:Maroon;
+    font-family:Segoe UI;
+    font-weight:bold;
+}

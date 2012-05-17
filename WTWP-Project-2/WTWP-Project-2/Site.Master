@@ -249,7 +249,14 @@
             </table></td>
               <asp:ScriptManager ID="ScriptManager1" runat="server">
               </asp:ScriptManager>
-            <td height="100%"><asp:ContentPlaceHolder runat="server" ID="MainContent"></asp:ContentPlaceHolder></td>
+            <td height="100%">
+            <asp:Panel ID="pnlHata" runat="server" Visible="false">
+            <div class="hata"><span id="hataMesaji" runat="server"></span></div>
+            </asp:Panel>
+            <asp:Panel ID="pnlBilgi" runat="server" Visible="false">
+            <div class="bilgi"><span id="bilgiMesaji" runat="server"></span></div>
+            </asp:Panel>
+            <asp:ContentPlaceHolder runat="server" ID="MainContent"></asp:ContentPlaceHolder></td>
           </tr>
         </table></td>
       </tr>

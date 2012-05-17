@@ -71,7 +71,7 @@ namespace WTWP_Project_2.ClassLayer
 
         public void kaydet()
         {
-            KullaniciDB.ekle(this);
+            
         }
 
         public void girisYap()

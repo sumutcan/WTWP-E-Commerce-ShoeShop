@@ -12,7 +12,7 @@ namespace WTWP_Project_2.DataAccessLayer
         public static void ekle(Kullanici obj)
         {
 
-            throw new NotImplementedException(); 
+            
 
         }
 

@@ -23,7 +23,9 @@ namespace WTWP_Project_2.ClassLayer
             yeniKullanici.Cinsiyet = cinsiyet;
             yeniKullanici.DogumYili = dogumYili;
 
-            yeniKullanici.kaydet();
+            KullaniciDB.ekle(yeniKullanici);
+                        
+
 
         }
 
