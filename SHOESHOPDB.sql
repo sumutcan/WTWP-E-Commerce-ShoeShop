@@ -1,6 +1,21 @@
 USE [SHOESHOP]
 GO
-/****** Object:  Table [dbo].[PRODUCER]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[CARGO]    Script Date: 05/18/2012 15:51:50 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[CARGO](
+	[CargoID] [int] IDENTITY(1,1) NOT NULL,
+	[CargoName] [nvarchar](50) NULL,
+	[CargoPrice] [decimal](18, 0) NULL,
+ CONSTRAINT [PK_CARGO] PRIMARY KEY CLUSTERED 
+(
+	[CargoID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[PRODUCER]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -18,7 +33,7 @@ CREATE TABLE [dbo].[PRODUCER](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[PHONE]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[PHONE]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -40,8 +55,10 @@ INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (7, N'', N'')
 INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (8, N'', N'')
 INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (9, N'343', N'3343434')
 INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (10, N'343', N'3434343')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (11, N'435', N'2343545')
+INSERT [dbo].[PHONE] ([PhoneID], [AreaCode], [PhoneNumber]) VALUES (12, N'234', N'3242342')
 SET IDENTITY_INSERT [dbo].[PHONE] OFF
-/****** Object:  Table [dbo].[PERSON]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[PERSON]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -67,8 +84,9 @@ SET IDENTITY_INSERT [dbo].[PERSON] ON
 INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (4, N'asdasdsad', N'sadadasd', N'asdasd@asdasd.com', N'E10ADC3949BA59ABBE56E057F20F883E', CAST(0x0000A05500095F15 AS DateTime))
 INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (5, N'fgdfgdfg', N'sfsf', N'dsfsdf@dasdsf.com', N'E10ADC3949BA59ABBE56E057F20F883E', CAST(0x0000A055000AADCF AS DateTime))
 INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (6, N'adad', N'asdasd', N'asdasd@asdasd.com', N'96E79218965EB72C92A549DD5A330112', CAST(0x0000A055000B44DA AS DateTime))
+INSERT [dbo].[PERSON] ([Pno], [Name], [Surname], [Email], [Password], [RegisterDate]) VALUES (7, N'Umutcan', N'Þimþek', N's.umutcan@gmail.com', N'E10ADC3949BA59ABBE56E057F20F883E', CAST(0x0000A05501020DD2 AS DateTime))
 SET IDENTITY_INSERT [dbo].[PERSON] OFF
-/****** Object:  Table [dbo].[PAYMENTTYPE]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[PAYMENTTYPE]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -83,7 +101,7 @@ CREATE TABLE [dbo].[PAYMENTTYPE](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CITY]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[CITY]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -181,7 +199,7 @@ INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (79, 79, N'Kilis')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (80, 80, N'Osmaniye')
 INSERT [dbo].[CITY] ([CityID], [CityCode], [CityName]) VALUES (81, 81, N'Düzce')
 SET IDENTITY_INSERT [dbo].[CITY] OFF
-/****** Object:  Table [dbo].[CAMPAIGN]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[CAMPAIGN]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -198,22 +216,7 @@ CREATE TABLE [dbo].[CAMPAIGN](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[CARGO]    Script Date: 05/18/2012 00:45:59 ******/
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
-CREATE TABLE [dbo].[CARGO](
-	[CargoID] [int] IDENTITY(1,1) NOT NULL,
-	[CargoName] [nvarchar](50) NULL,
-	[CargoPrice] [decimal](18, 0) NULL,
- CONSTRAINT [PK_CARGO] PRIMARY KEY CLUSTERED 
-(
-	[CargoID] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
-GO
-/****** Object:  Table [dbo].[PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[PRODUCT]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -232,7 +235,7 @@ CREATE TABLE [dbo].[PRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[DISTRICT]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[DISTRICT]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1211,7 +1214,7 @@ INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (942, 9, 0, N'DIDIM')
 INSERT [dbo].[DISTRICT] ([DistrictID], [CityCode], [DistrictCode], [DistrictName]) VALUES (943, 41, 0, N'DERINCE')
 SET IDENTITY_INSERT [dbo].[DISTRICT] OFF
-/****** Object:  Table [dbo].[CUSTOMER]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[CUSTOMER]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1235,7 +1238,8 @@ GO
 INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (4, 1991, 5, 6, N'X')
 INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (5, 2000, 7, 8, N'E')
 INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (6, 2000, 9, 10, N'E')
-/****** Object:  Table [dbo].[ADMIN]    Script Date: 05/18/2012 00:45:59 ******/
+INSERT [dbo].[CUSTOMER] ([Pno], [YearOfBirth], [HomePhoneID], [MobilePhoneID], [Gender]) VALUES (7, 1991, 11, 12, N'E')
+/****** Object:  Table [dbo].[ADMIN]    Script Date: 05/18/2012 15:51:50 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1249,23 +1253,19 @@ CREATE TABLE [dbo].[ADMIN](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[INVENTORY]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  StoredProcedure [dbo].[CheckUser]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-CREATE TABLE [dbo].[INVENTORY](
-	[ProductID] [int] NOT NULL,
-	[Count] [int] NOT NULL,
-	[LastUpdate] [datetime] NOT NULL,
-	[PricePerPiece] [float] NOT NULL,
- CONSTRAINT [PK_INVENTORY] PRIMARY KEY CLUSTERED 
+CREATE proc [dbo].[CheckUser]
 (
-	[ProductID] ASC
-)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
-) ON [PRIMARY]
+	@email nvarchar(max)
+)
+AS
+SELECT COUNT(*) AS 'Sayi' FROM PERSON WHERE Email = @email GROUP BY Pno
 GO
-/****** Object:  Table [dbo].[CARTPRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[CARTPRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1280,7 +1280,7 @@ CREATE TABLE [dbo].[CARTPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[ADDRESS]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  Table [dbo].[ADDRESS]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1304,7 +1304,7 @@ CREATE TABLE [dbo].[ADDRESS](
 GO
 SET ANSI_PADDING OFF
 GO
-/****** Object:  StoredProcedure [dbo].[AddCustomer]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  StoredProcedure [dbo].[AddCustomer]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1392,7 +1392,36 @@ IF @@ERROR <> 0
  
  COMMIT
 GO
-/****** Object:  Table [dbo].[CAMPAIGNPRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  StoredProcedure [dbo].[LoginUser]    Script Date: 05/18/2012 15:51:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[LoginUser]
+(
+	@email nvarchar(max),
+	@password nvarchar(max)
+)
+AS
+SELECT Person.Pno FROM PERSON, CUSTOMER WHERE Email = @email and Password = @password and PERSON.Pno = CUSTOMER.Pno
+GO
+/****** Object:  Table [dbo].[INVENTORY]    Script Date: 05/18/2012 15:51:51 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[INVENTORY](
+	[ProductID] [int] NOT NULL,
+	[Count] [int] NOT NULL,
+	[LastUpdate] [datetime] NOT NULL,
+	[PricePerPiece] [float] NOT NULL,
+ CONSTRAINT [PK_INVENTORY] PRIMARY KEY CLUSTERED 
+(
+	[ProductID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[CAMPAIGNPRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1407,7 +1436,7 @@ CREATE TABLE [dbo].[CAMPAIGNPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SALE]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  Table [dbo].[SALE]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1424,7 +1453,7 @@ CREATE TABLE [dbo].[SALE](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[SALEPRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  Table [dbo].[SALEPRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -1439,121 +1468,121 @@ CREATE TABLE [dbo].[SALEPRODUCT](
 )WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  ForeignKey [FK_PRODUCT_PRODUCER]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_PRODUCT_PRODUCER]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[PRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_PRODUCT_PRODUCER] FOREIGN KEY([ProducerID])
 REFERENCES [dbo].[PRODUCER] ([ProducerID])
 GO
 ALTER TABLE [dbo].[PRODUCT] CHECK CONSTRAINT [FK_PRODUCT_PRODUCER]
 GO
-/****** Object:  ForeignKey [FK_DISTRICT_CITY]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_DISTRICT_CITY]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[DISTRICT]  WITH CHECK ADD  CONSTRAINT [FK_DISTRICT_CITY] FOREIGN KEY([CityCode])
 REFERENCES [dbo].[CITY] ([CityID])
 GO
 ALTER TABLE [dbo].[DISTRICT] CHECK CONSTRAINT [FK_DISTRICT_CITY]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PERSON]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PERSON]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PHONE]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PHONE]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PHONE] FOREIGN KEY([HomePhoneID])
 REFERENCES [dbo].[PHONE] ([PhoneID])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PHONE]
 GO
-/****** Object:  ForeignKey [FK_CUSTOMER_PHONE1]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_CUSTOMER_PHONE1]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[CUSTOMER]  WITH CHECK ADD  CONSTRAINT [FK_CUSTOMER_PHONE1] FOREIGN KEY([MobilePhoneID])
 REFERENCES [dbo].[PHONE] ([PhoneID])
 GO
 ALTER TABLE [dbo].[CUSTOMER] CHECK CONSTRAINT [FK_CUSTOMER_PHONE1]
 GO
-/****** Object:  ForeignKey [FK_ADMIN_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_ADMIN_PERSON]    Script Date: 05/18/2012 15:51:50 ******/
 ALTER TABLE [dbo].[ADMIN]  WITH CHECK ADD  CONSTRAINT [FK_ADMIN_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[ADMIN] CHECK CONSTRAINT [FK_ADMIN_PERSON]
 GO
-/****** Object:  ForeignKey [FK_INVENTORY_PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
-ALTER TABLE [dbo].[INVENTORY]  WITH CHECK ADD  CONSTRAINT [FK_INVENTORY_PRODUCT] FOREIGN KEY([ProductID])
-REFERENCES [dbo].[PRODUCT] ([ProductID])
-GO
-ALTER TABLE [dbo].[INVENTORY] CHECK CONSTRAINT [FK_INVENTORY_PRODUCT]
-GO
-/****** Object:  ForeignKey [FK_CARTPRODUCT_CUSTOMER]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_CARTPRODUCT_CUSTOMER]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[CARTPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CARTPRODUCT_CUSTOMER] FOREIGN KEY([Pno])
 REFERENCES [dbo].[CUSTOMER] ([Pno])
 GO
 ALTER TABLE [dbo].[CARTPRODUCT] CHECK CONSTRAINT [FK_CARTPRODUCT_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_CARTPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_CARTPRODUCT_PRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[CARTPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CARTPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[CARTPRODUCT] CHECK CONSTRAINT [FK_CARTPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_CITY]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_CITY]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_CITY] FOREIGN KEY([CityID])
 REFERENCES [dbo].[CITY] ([CityID])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_CITY]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_DISTRICT]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_DISTRICT]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_DISTRICT] FOREIGN KEY([DistrictID])
 REFERENCES [dbo].[DISTRICT] ([DistrictID])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_DISTRICT]
 GO
-/****** Object:  ForeignKey [FK_ADDRESS_PERSON]    Script Date: 05/18/2012 00:45:59 ******/
+/****** Object:  ForeignKey [FK_ADDRESS_PERSON]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[ADDRESS]  WITH CHECK ADD  CONSTRAINT [FK_ADDRESS_PERSON] FOREIGN KEY([Pno])
 REFERENCES [dbo].[PERSON] ([Pno])
 GO
 ALTER TABLE [dbo].[ADDRESS] CHECK CONSTRAINT [FK_ADDRESS_PERSON]
 GO
-/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_CAMPAIGN]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_INVENTORY_PRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
+ALTER TABLE [dbo].[INVENTORY]  WITH CHECK ADD  CONSTRAINT [FK_INVENTORY_PRODUCT] FOREIGN KEY([ProductID])
+REFERENCES [dbo].[PRODUCT] ([ProductID])
+GO
+ALTER TABLE [dbo].[INVENTORY] CHECK CONSTRAINT [FK_INVENTORY_PRODUCT]
+GO
+/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_CAMPAIGN]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CAMPAIGNPRODUCT_CAMPAIGN] FOREIGN KEY([CampaignID])
 REFERENCES [dbo].[CAMPAIGN] ([CampaignID])
 GO
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT] CHECK CONSTRAINT [FK_CAMPAIGNPRODUCT_CAMPAIGN]
 GO
-/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_CAMPAIGNPRODUCT_PRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_CAMPAIGNPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[CAMPAIGNPRODUCT] CHECK CONSTRAINT [FK_CAMPAIGNPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_SALE_ADDRESS]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALE_ADDRESS]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_ADDRESS] FOREIGN KEY([AddressID])
 REFERENCES [dbo].[ADDRESS] ([AddressID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_ADDRESS]
 GO
-/****** Object:  ForeignKey [FK_SALE_CARGO]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALE_CARGO]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_CARGO] FOREIGN KEY([CargoID])
 REFERENCES [dbo].[CARGO] ([CargoID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_CARGO]
 GO
-/****** Object:  ForeignKey [FK_SALE_CUSTOMER]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALE_CUSTOMER]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_CUSTOMER] FOREIGN KEY([Pno])
 REFERENCES [dbo].[CUSTOMER] ([Pno])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_CUSTOMER]
 GO
-/****** Object:  ForeignKey [FK_SALE_PAYMENTTYPE]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALE_PAYMENTTYPE]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALE]  WITH CHECK ADD  CONSTRAINT [FK_SALE_PAYMENTTYPE] FOREIGN KEY([PaymentTypeID])
 REFERENCES [dbo].[PAYMENTTYPE] ([PaymentTypeID])
 GO
 ALTER TABLE [dbo].[SALE] CHECK CONSTRAINT [FK_SALE_PAYMENTTYPE]
 GO
-/****** Object:  ForeignKey [FK_SALEPRODUCT_PRODUCT]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALEPRODUCT_PRODUCT]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALEPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_SALEPRODUCT_PRODUCT] FOREIGN KEY([ProductID])
 REFERENCES [dbo].[PRODUCT] ([ProductID])
 GO
 ALTER TABLE [dbo].[SALEPRODUCT] CHECK CONSTRAINT [FK_SALEPRODUCT_PRODUCT]
 GO
-/****** Object:  ForeignKey [FK_SALEPRODUCT_SALE]    Script Date: 05/18/2012 00:46:00 ******/
+/****** Object:  ForeignKey [FK_SALEPRODUCT_SALE]    Script Date: 05/18/2012 15:51:51 ******/
 ALTER TABLE [dbo].[SALEPRODUCT]  WITH CHECK ADD  CONSTRAINT [FK_SALEPRODUCT_SALE] FOREIGN KEY([SaleID])
 REFERENCES [dbo].[SALE] ([SaleID])
 GO

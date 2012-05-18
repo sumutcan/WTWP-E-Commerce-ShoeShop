@@ -61,6 +61,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Kayit.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="niceforms-default.css" />
     <Content Include="style.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -75,6 +77,7 @@
     <Compile Include="ClassLayer\Adres.cs" />
     <Compile Include="ClassLayer\Kampanya.cs" />
     <Compile Include="ClassLayer\Kargo.cs" />
+    <Compile Include="ClassLayer\Kisi.cs" />
     <Compile Include="ClassLayer\Kullanici.cs" />
     <Compile Include="ClassLayer\KullaniciIslemleriHandler.cs" />
     <Compile Include="ClassLayer\Misc.cs" />
@@ -100,6 +103,13 @@
     </Compile>
     <Compile Include="Kayit.aspx.designer.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShoeShopEntity.Designer.cs">

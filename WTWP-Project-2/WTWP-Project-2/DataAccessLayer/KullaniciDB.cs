@@ -56,12 +56,48 @@ namespace WTWP_Project_2.DataAccessLayer
 
         public static bool kullaniciVarMi(string email)
         {
-            throw new NotImplementedException();
+            try
+            {
+
+                if (new DBConnection().ConnectDB.CheckUser(email).First() == 0)
+                    return false;
+
+                return true;
+            }
+            catch (EntityCommandExecutionException)
+            {
+                throw new Exception("Kullanıcı kontrolü yapılırken hata oluştu.");
+            }
+            catch (InvalidOperationException)
+            {
+                throw new Exception("Böyle bir kullanıcı yok.");
+            }
+
         }
 
         public static void sifreSifirla(Kullanici kullanici)
         {
             throw new NotImplementedException();
+        }
+
+        public static Kisi loginKontrol(Kisi kisi)
+        {
+            try
+            {
+                Kisi k = null;
+
+                foreach (Int32 pno in new DBConnection().ConnectDB.LoginUser(kisi.Email, kisi.Sifre))
+                {
+                    k = new Kullanici();
+                    k.ID = pno;
+                }
+
+                return k;
+            }
+            catch (EntityCommandExecutionException)
+            {
+                throw new Exception("Giriş yapılırken hata oluştu.");
+            }
         }
     }
 }

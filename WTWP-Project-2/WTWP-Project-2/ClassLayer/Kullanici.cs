@@ -8,13 +8,9 @@ using System.Collections;
 
 namespace WTWP_Project_2.ClassLayer
 {
-    public class Kullanici
+    public class Kullanici : Kisi
     {
-        private int id;
-        private string ad;
-        private string soyad;
-        private string sifre;
-        private string email;
+
         private Telefon evTel;
         private Telefon cepTel;
         private char cinsiyet;
@@ -42,42 +38,13 @@ namespace WTWP_Project_2.ClassLayer
             get { return dogumYili; }
             set { dogumYili = value; }
         }
-        public string Ad { get { return ad; } set { ad = value; } }
 
-        public string Soyad { get { return soyad; } set { soyad = value; } }
-
-        public string Email { get { return email; } set { email = value ;} }
-
-        public string Sifre 
-        { 
-            get { return sifre; } 
-            
-            set 
-            {
-                sifre = FormsAuthentication.HashPasswordForStoringInConfigFile(value,"md5");
-            } 
-        }
 
 
         public Telefon EvTel { get { return evTel; } set {evTel = value ;} }
 
         public Telefon CepTel { get { return cepTel; } set { cepTel = value; } }
 
-        public int ID
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
-        public void kaydet()
-        {
-            
-        }
-
-        public void girisYap()
-        {
-            //kullanıcıyı veritabanından çek. null dönerse hata ver, dönmezse kullanıcı nesnesi döndür.
-        }
 
         public void sifremiUnuttum()
         {
@@ -93,7 +60,7 @@ namespace WTWP_Project_2.ClassLayer
 
             KullaniciDB.sifreSifirla(this);
 
-            Misc.getInstance().mailgonder(email, "Yeni şifre", mesaj);
+            Misc.getInstance().mailgonder(base.Email, "Yeni şifre", mesaj);
         }
         public void sepeteEkle(Urun yeniUrun)
         {
@@ -105,6 +72,15 @@ namespace WTWP_Project_2.ClassLayer
             sepet.Remove(urunID);
         }
 
-        
+
+
+        public override Kisi girisYap()
+        {
+            if (!KullaniciDB.kullaniciVarMi(base.Email))
+                throw new Exception("Böyle bir kullanıcı yok.");
+
+            return KullaniciDB.loginKontrol(this);
+
+        }
     }
 }

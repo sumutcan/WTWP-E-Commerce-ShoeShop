@@ -81,6 +81,12 @@ URL: http://www.emblematiq.com/
 .NFMultiSelectRight {background:url(img/textarea-r-off.png) repeat-y 100% 0;}
 .NFMultiSelectRightH {background:url(img/textarea-r-over.png) repeat-y 100% 0;}
 
+.lnkForm
+{
+    color:Gray;
+    font-family:Segoe UI;
+}
+
 /*Focused*/
 .NFfocused {border:1px dotted #666;}
 /*Hovered*/

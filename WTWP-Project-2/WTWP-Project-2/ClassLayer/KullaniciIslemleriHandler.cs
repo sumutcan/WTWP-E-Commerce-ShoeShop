@@ -33,19 +33,19 @@ namespace WTWP_Project_2.ClassLayer
 
         }
 
-        public Kullanici kullaniciGiris(string email, string sifre)
+        public Kisi kullaniciGiris(string email, string sifre)
         {
             if (!KullaniciDB.kullaniciVarMi(email))
                 throw new Exception("Böyle bir kullanıcı yok.");
 
-            Kullanici girisYapacak = new Kullanici();
+            Kisi girisYapacak = new Kullanici();
             girisYapacak.Email = email;
             girisYapacak.Sifre = sifre;
 
-            girisYapacak.girisYap();
+            return girisYapacak.girisYap();
 
             
-            return null;
+            
         }
 
     }
