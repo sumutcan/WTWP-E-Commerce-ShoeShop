@@ -99,5 +99,28 @@ namespace WTWP_Project_2.DataAccessLayer
                 throw new Exception("Giriş yapılırken hata oluştu.");
             }
         }
+
+        public static void sepetiKaydet(int pNo, Dictionary<int, Urun> sepet)
+        {
+            foreach (Int32 k in sepet.Keys)
+            {
+                new DBConnection().ConnectDB.AddProductToCart(pNo,sepet[k].ProductID);
+            }
+        }
+
+        public static Dictionary<int, Urun> kayitliSepetiGetir(int kullaniciID)
+        {
+            Dictionary<int, Urun> getirilenSepet = new Dictionary<int, Urun>();
+
+            foreach (Int32 urunID in new DBConnection().ConnectDB.GetProductsFromCart(kullaniciID))
+            {
+                getirilenSepet.Add(urunID, new Urun(urunID));
+            
+            }
+
+            return getirilenSepet;
+
+        }
+
     }
 }

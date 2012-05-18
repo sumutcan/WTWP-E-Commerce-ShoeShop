@@ -28,6 +28,8 @@ namespace WTWP_Project_2
                 if (Session[Misc.GecerliKullanici] == null)
                     throw new Exception("Email veya şifre yanlış.");
 
+                (Session[Misc.GecerliKullanici] as Kullanici).kayitliSepetiGetir();
+
 
                 Response.Redirect("~/Default.aspx",false);
             }

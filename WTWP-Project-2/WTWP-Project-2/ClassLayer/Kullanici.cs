@@ -16,7 +16,7 @@ namespace WTWP_Project_2.ClassLayer
         private char cinsiyet;
         private int dogumYili;
         ArrayList adresler;
-        Dictionary<int, Urun> sepet;
+        private Dictionary<int, Urun> sepet;
 
         public Kullanici()
         {
@@ -81,6 +81,19 @@ namespace WTWP_Project_2.ClassLayer
 
             return KullaniciDB.loginKontrol(this);
 
+        }
+
+        public void sepetiKaydet()
+        {
+            if (this.sepet.Count > 0)
+                KullaniciDB.sepetiKaydet(this.ID, this.sepet);
+
+        }
+
+        public void kayitliSepetiGetir()
+        {
+            this.sepet = KullaniciDB.kayitliSepetiGetir(this.ID);
+         
         }
     }
 }

@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<fieldset>
+    <fieldset>
     <legend>Giriş</legend>
        <dl>     
             <dt><label for="txtEPosta"> E-Posta:</label></dt>

@@ -63,6 +63,13 @@ namespace WTWP_Project_2.ClassLayer
         }
 
         string urunURL;
+        private int urunID;
+
+        public Urun(int urunID)
+        {
+            // TODO: Complete member initialization
+            this.urunID = urunID;
+        }
 
         public string UrunURL
         {
