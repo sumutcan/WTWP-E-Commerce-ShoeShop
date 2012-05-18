@@ -42,7 +42,8 @@ namespace WTWP_Project_2
 
         protected void lnkSifremiUnuttum_Click(object sender, EventArgs e)
         {
-
+            KullaniciIslemleriHandler handler = Session[Misc.KullaniciIslemleriHandler] as KullaniciIslemleriHandler;
+            handler.sifremiUnuttum(txtEPosta.Text);
         }
     }
 }

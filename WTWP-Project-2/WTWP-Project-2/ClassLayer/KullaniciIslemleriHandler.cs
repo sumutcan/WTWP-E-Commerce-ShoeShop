@@ -48,5 +48,13 @@ namespace WTWP_Project_2.ClassLayer
             
         }
 
+
+        public void sifremiUnuttum(string email)
+        {
+            Kullanici kullanici = new Kullanici();
+            kullanici.Email = email;
+            kullanici.sifremiUnuttum();
+            
+        }
     }
 }

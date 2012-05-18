@@ -77,7 +77,11 @@ namespace WTWP_Project_2.DataAccessLayer
 
         public static void sifreSifirla(Kullanici kullanici)
         {
-            throw new NotImplementedException();
+            if (!KullaniciDB.kullaniciVarMi(kullanici.Email))
+                throw new Exception("Böyle bir kullanıcı yok");
+
+            DBConnection db = new DBConnection();
+            db.ConnectDB.ResetPassword(kullanici.Email, kullanici.Sifre);
         }
 
         public static Kisi loginKontrol(Kisi kisi)
