@@ -129,7 +129,7 @@ namespace WTWP_Project_2.DataAccessLayer
                 db.ConnectDB.SaveChanges();
 
             }
-            catch (EntityCommandExecutionException ex)
+            catch (EntityCommandExecutionException)
             {
                 throw new Exception("Sepet silinirken hata oluştu.");
             }
