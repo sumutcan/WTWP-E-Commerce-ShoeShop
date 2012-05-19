@@ -13,6 +13,13 @@ namespace WTWP_Project_2.ClassLayer
         private string soyad;
         private string sifre;
         private string email;
+        private string hamSifre;
+
+        public string HamSifre
+        {
+            get { return hamSifre; }
+            set { hamSifre = value; }
+        }
 
         public string Ad { get { return ad; } set { ad = value; } }
 

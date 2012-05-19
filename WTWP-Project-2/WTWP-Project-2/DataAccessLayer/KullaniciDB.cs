@@ -122,9 +122,79 @@ namespace WTWP_Project_2.DataAccessLayer
             
             }
 
+            try
+            {
+                DBConnection db = new DBConnection();
+                db.ConnectDB.DeleteCart(kullaniciID);
+                db.ConnectDB.SaveChanges();
+
+            }
+            catch (EntityCommandExecutionException ex)
+            {
+                throw new Exception("Sepet silinirken hata oluştu.");
+            }
+
+
             return getirilenSepet;
 
         }
 
+
+        public static Kullanici profilBilgileriniGetir(int pNo)
+        {
+            GetUserProfile_Result profile = new DBConnection().ConnectDB.GetUserProfile(pNo).First();
+            Kullanici kullanici = new Kullanici();
+
+            kullanici.Ad = profile.Name;
+            kullanici.Soyad = profile.Surname;
+            kullanici.Email = profile.Email;
+            kullanici.Cinsiyet = Convert.ToChar(profile.Gender);
+            kullanici.DogumYili = profile.YearOfBirth;
+            kullanici.HamSifre = profile.Password;
+
+            PHONE phone = new DBConnection().ConnectDB.GetUserPhones(profile.HomePhoneID).First();
+            kullanici.EvTel = new Telefon(phone.PhoneID,phone.AreaCode,phone.PhoneNumber);
+            
+            phone = new DBConnection().ConnectDB.GetUserPhones(profile.MobilePhoneID).First();
+            kullanici.CepTel = new Telefon(phone.PhoneID, phone.AreaCode, phone.PhoneNumber);
+
+            return kullanici;
+
+
+           
+
+            
+        }
+
+        public static void profilBilgileriniGuncelle(Kullanici kullanici)
+        {
+            try
+            {
+                DBConnection db = new DBConnection();
+                db.ConnectDB.UpdateCustomer(kullanici.Ad,kullanici.Soyad,kullanici.Email,kullanici.HamSifre,kullanici.DogumYili,kullanici.Cinsiyet.ToString(),kullanici.EvTel.AlanKodu,kullanici.EvTel.No,kullanici.CepTel.AlanKodu,kullanici.CepTel.No,kullanici.ID,kullanici.EvTel.ID,kullanici.CepTel.ID);
+                db.ConnectDB.SaveChanges();
+            }
+            catch (EntityCommandExecutionException entityEx)
+            {
+                SqlException sqlEx = (SqlException)entityEx.InnerException;
+
+                switch (sqlEx.State)
+                {
+                    case 1:
+                        throw new Exception("Kişi bilgileri güncellenemedi.");
+                    case 2:
+                        throw new Exception("Ev telefonu bilgileri güncellenemedi.");
+                    case 3:
+                        throw new Exception("Cep telefonu bilgileri güncellenemedi..");
+                    case 4:
+                        throw new Exception("Müşteri bilgileri güncellenemedi.");
+                    default:
+                        throw new Exception("Veritabanında bir hata oluştu.");
+
+
+                }
+            }
+            
+        }
     }
 }

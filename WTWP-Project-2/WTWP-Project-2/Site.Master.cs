@@ -29,6 +29,7 @@ namespace WTWP_Project_2
 
                 pnlKayitProfil.Visible = true;
                 lnkKayitProfil.Text = "Profil";
+                lnkKayitProfil.PostBackUrl = "~/Profil.aspx";
 
                 pnlSepet.Visible = true;
             }

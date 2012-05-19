@@ -35,17 +35,13 @@
         	<dt><label for="txtSifre">Şifre:</label></dt>
             <dd><asp:TextBox
                     ID="txtSifre" TextMode="Password" runat="server" MaxLength="32"></asp:TextBox>
-                    <asp:RequiredFieldValidator
-                        ID="RequiredFieldValidator4" runat="server" 
-                    ControlToValidate="txtEPosta" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+                    </dd>
         </dl>
         <dl>
         	<dt><label for="txtSifreTekrar">Şifre (Tekrar):</label></dt>
             <dd><asp:TextBox
                     ID="txtSifreTekrar" TextMode="Password" runat="server" MaxLength="32"></asp:TextBox>
-                    <asp:RequiredFieldValidator
-                        ID="RequiredFieldValidator5" runat="server" 
-                    ControlToValidate="txtSifreTekrar" ErrorMessage="Zorunlu alan" Display="Dynamic"></asp:RequiredFieldValidator></dd>
+                    </dd>
         </dl>
         <dl>
         	<dt><label for="gender">Cinsiyet:</label></dt>

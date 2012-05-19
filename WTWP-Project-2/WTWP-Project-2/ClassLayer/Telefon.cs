@@ -12,6 +12,12 @@ namespace WTWP_Project_2.ClassLayer
         private string no;
         private int id;
 
+        public int ID
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
         public Telefon(int id, string alanKodu, string no)
         {
             this.id = id;
