@@ -38,7 +38,7 @@
                                       <td height="25" align="left" valign="bottom" class="style5"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
                                           <tr align="left" valign="middle">
                                             <td class="style7"><strong>&nbsp;<span class="style8">179.95</span> TL</strong></td>
-                                            <td align="center"><a href="#" class="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></a><a href="#" class="aSatinAl"><div class="btnSatinAl">Karşılaştır</div></a></td>
+                                            <td valign="middle" align="center"><div style="float:right; margin-top:5px;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></a></div> <div style="margin-top:5px; position:relative; float:right;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Karşılaştır</div></a></div></td>
                                           </tr>
                                       </table></td>
                                     </tr>
