@@ -42,8 +42,20 @@ namespace WTWP_Project_2
 
         protected void lnkSifremiUnuttum_Click(object sender, EventArgs e)
         {
-            KullaniciIslemleriHandler handler = Session[Misc.KullaniciIslemleriHandler] as KullaniciIslemleriHandler;
-            handler.sifremiUnuttum(txtEPosta.Text);
+            try
+            {
+                KullaniciIslemleriHandler handler = Session[Misc.KullaniciIslemleriHandler] as KullaniciIslemleriHandler;
+                handler.sifremiUnuttum(txtEPosta.Text);
+
+                ((Panel)Page.Master.FindControl("pnlBilgi")).Visible = true;
+                ((HtmlGenericControl)Page.Master.FindControl("bilgiMesaji")).InnerText = "Şifre başarıyla sıfırlandı.";
+
+            }
+            catch (Exception ex)
+            {
+                ((Panel)Page.Master.FindControl("pnlHata")).Visible = true;
+                ((HtmlGenericControl)Page.Master.FindControl("hataMesaji")).InnerText = ex.Message;
+            }
         }
     }
 }
