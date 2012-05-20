@@ -76,5 +76,30 @@ namespace WTWP_Project_2.ClassLayer
             get { return urunURL; }
             set { urunURL = value; }
         }
+
+        private int numara;
+
+        public int Numara
+        {
+            get { return numara; }
+            set { numara = value; }
+        }
+
+        private string renk;
+
+        public string Renk
+        {
+            get { return renk; }
+            set { renk = value; }
+        }
+
+        private double fiyat;
+
+        public double Fiyat
+        {
+            get { return fiyat; }
+            set { fiyat = value; }
+        }
+
     }
 }
