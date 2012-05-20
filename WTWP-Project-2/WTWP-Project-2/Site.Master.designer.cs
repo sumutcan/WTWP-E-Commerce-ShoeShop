@@ -76,6 +76,15 @@ namespace WTWP_Project_2 {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor lnkSepet;
         
         /// <summary>
+        /// lblSepettekiUrunMiktari control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblSepettekiUrunMiktari;
+        
+        /// <summary>
         /// lnkCikis control.
         /// </summary>
         /// <remarks>

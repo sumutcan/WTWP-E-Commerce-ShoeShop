@@ -4,7 +4,8 @@
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <asp:ListView runat="server" ID="lstTOP5">
+    <asp:ListView runat="server" ID="lstTOP5" 
+        onselectedindexchanged="lstTOP5_SelectedIndexChanged">
     <LayoutTemplate>
     <div style="padding-left:27px; padding-top:12px">
     
@@ -54,7 +55,14 @@
                                       <td height="25" align="left" valign="bottom" class="style5"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
                                           <tr align="left" valign="middle">
                                             <td class="style7"><strong>&nbsp;<span class="style8"><%#Eval("Fiyat") %></span>TL</strong></td>
-                                            <td valign="middle" align="center"><div style="float:right; margin-top:5px;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></a></div> <div style="margin-top:5px; position:relative; float:right;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Karşılaştır</div></a></div></td>
+                                            <td valign="middle" align="center"><div style="float:right; margin-top:5px;">
+                                            <asp:UpdatePanel runat="server" ID="updateSepeteEkle">
+                                            <ContentTemplate>
+                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></a></div> <div style="margin-top:5px; position:relative; float:right;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
+                                            </ContentTemplate>
+              
+                                            </asp:UpdatePanel>
+                                            </div></td>
                                           </tr>
                                       </table></td>
                                     </tr>

@@ -26,5 +26,15 @@ namespace WTWP_Project_2
             lstTOP5.DataBind();
 
         }
+
+        protected void lstTOP5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void lnkSepeteEkle_Click(object sender, EventArgs e)
+        {
+            ((Literal)Page.Master.FindControl("lblSepettekiUrunMiktari")).Text = "1"; 
+        }
     }
 }
