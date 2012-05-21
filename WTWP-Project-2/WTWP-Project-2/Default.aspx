@@ -5,7 +5,9 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <asp:ListView runat="server" ID="lstTOP5" 
-        onselectedindexchanged="lstTOP5_SelectedIndexChanged">
+        onselectedindexchanged="lstTOP5_SelectedIndexChanged" 
+        onitemdatabound="lstTOP5_ItemDataBound" 
+        onlayoutcreated="lstTOP5_LayoutCreated" onitemcommand="lstTOP5_ItemCommand">
     <LayoutTemplate>
     <div style="padding-left:27px; padding-top:12px">
     
@@ -58,7 +60,7 @@
                                             <td valign="middle" align="center"><div style="float:right; margin-top:5px;">
                                             <asp:UpdatePanel runat="server" ID="updateSepeteEkle">
                                             <ContentTemplate>
-                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></a></div> <div style="margin-top:5px; position:relative; float:right;"><a href="#" class="aSatinAl"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
+                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("ProductID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
                                             </ContentTemplate>
               
                                             </asp:UpdatePanel>
