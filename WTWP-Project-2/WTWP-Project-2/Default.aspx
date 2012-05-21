@@ -37,18 +37,18 @@
                                     <div style="padding-left:18px; padding-top:22px">
                                       <table width="55"  border="0" cellspacing="0" cellpadding="0">
                                         <tr align="left" valign="middle">
-                                          <td width="12"><img alt=""  src="images/point_4.jpg" width="9" height="9"></td>
-                                          <td><a href="#" class="style6">büyüt</a></td>
+                                         
+                                          
                                         </tr>
                                       </table>
                                   </div></td>
                                 <td><table  border="0" cellspacing="0" cellpadding="0" style="width: 365px">
                                     <tr>
-                                      <td height="24" align="left" valign="top" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><img alt=""  src="images/offer.jpg" width="109" height="15">buraya 
-                                          marka model falan o tarz şeyler gelecek</td>
+                                      <td height="24" align="left" valign="top" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><img alt=""  src="images/offer.jpg" width="109" height="15">
+                                          <%#Eval("Urun.Uretici.Ad")%></td>
                                     </tr>
                                     <tr>
-                                      <td height="40" align="left" valign="middle" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><%#Eval("Description") %></td>
+                                      <td height="40" align="left" valign="middle" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><%#Eval("Urun.Description") %></td>
                                     </tr>
                                     <tr>
                                       <td height="22" align="left" valign="middle" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x ">Numara: <span class="style3"><strong><%#Eval("Numara") %></strong></span>&nbsp;&nbsp;&nbsp;&nbsp;Renk: <span class="style3"><strong><%#Eval("Renk") %></strong></span></td>
@@ -60,7 +60,7 @@
                                             <td valign="middle" align="center"><div style="float:right; margin-top:5px;">
                                             <asp:UpdatePanel runat="server" ID="updateSepeteEkle">
                                             <ContentTemplate>
-                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("ProductID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
+                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("SatilanUrunID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
                                             </ContentTemplate>
               
                                             </asp:UpdatePanel>

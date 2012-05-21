@@ -16,12 +16,12 @@ namespace WTWP_Project_2.ClassLayer
         private char cinsiyet;
         private int dogumYili;
         ArrayList adresler;
-        private Dictionary<int, Urun> sepet;
+        private Dictionary<int, SatilanUrun> sepet;
 
         public Kullanici()
         {
             adresler = new ArrayList();
-            sepet = new Dictionary<int, Urun>();
+            sepet = new Dictionary<int, SatilanUrun>();
         }
 
         public char Cinsiyet
@@ -62,9 +62,9 @@ namespace WTWP_Project_2.ClassLayer
 
             Misc.getInstance().mailgonder(base.Email, "Yeni şifre", mesaj);
         }
-        public void sepeteEkle(Urun yeniUrun)
+        public void sepeteEkle(SatilanUrun yeniUrun)
         {
-            sepet.Add(yeniUrun.ProductID,yeniUrun);
+            sepet.Add(yeniUrun.SatilanUrunID,yeniUrun);
         }
 
         public void sepettenCikar(int urunID)
