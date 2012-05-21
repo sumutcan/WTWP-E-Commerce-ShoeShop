@@ -1,0 +1,14 @@
+USE [SHOESHOP]
+GO
+/****** Object:  StoredProcedure [dbo].[LoginAdmin]    Script Date: 05/22/2012 01:37:16 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER proc [dbo].[LoginAdmin]
+(
+	@email nvarchar(max),
+	@password nvarchar(max)
+)
+AS
+SELECT Person.Pno FROM PERSON, ADMIN WHERE Email = @email and Password = @password and PERSON.Pno = ADMIN.Pno
