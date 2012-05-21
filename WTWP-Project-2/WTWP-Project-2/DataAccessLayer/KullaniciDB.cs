@@ -104,21 +104,23 @@ namespace WTWP_Project_2.DataAccessLayer
             }
         }
 
-        public static void sepetiKaydet(int pNo, Dictionary<int, Urun> sepet)
+        public static void sepetiKaydet(int pNo, Dictionary<int, SatilanUrun> sepet)
         {
             foreach (Int32 k in sepet.Keys)
             {
-                new DBConnection().ConnectDB.AddProductToCart(pNo,sepet[k].ProductID);
+                new DBConnection().ConnectDB.AddProductToCart(pNo,sepet[k].SatilanUrunID);
             }
         }
 
-        public static Dictionary<int, Urun> kayitliSepetiGetir(int kullaniciID)
+        public static Dictionary<int, SatilanUrun> kayitliSepetiGetir(int kullaniciID)
         {
-            Dictionary<int, Urun> getirilenSepet = new Dictionary<int, Urun>();
+            Dictionary<int, SatilanUrun> getirilenSepet = new Dictionary<int, SatilanUrun>();
 
-            foreach (Int32 urunID in new DBConnection().ConnectDB.GetProductsFromCart(kullaniciID))
+            foreach (Int32 satilanUrunID in new DBConnection().ConnectDB.GetProductsFromCart(kullaniciID))
             {
-                getirilenSepet.Add(urunID, new Urun(urunID));
+                SatilanUrun u = new SatilanUrun();
+                u.SatilanUrunID = satilanUrunID;
+                getirilenSepet.Add(satilanUrunID, u);
             
             }
 

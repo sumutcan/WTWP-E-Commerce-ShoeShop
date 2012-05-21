@@ -11,7 +11,12 @@ namespace WTWP_Project_2.ClassLayer
         public int ProductID
         {
             get { return productID; }
-            set { productID = value; }
+            set { 
+                
+                productID = value;
+                urunURL = "/UrunResimleri/" + value + ".jpg";
+            
+            }
         }
 
 
@@ -48,29 +53,18 @@ namespace WTWP_Project_2.ClassLayer
             set { urunURL = value; }
         }
 
-        private int numara;
 
-        public int Numara
+        public Urun(int productID)
         {
-            get { return numara; }
-            set { numara = value; }
+            // TODO: Complete member initialization
+            this.productID = productID;
         }
 
-        private string renk;
-
-        public string Renk
-        {
-            get { return renk; }
-            set { renk = value; }
+        public Urun()
+        { 
+        
         }
 
-        private double fiyat;
-
-        public double Fiyat
-        {
-            get { return fiyat; }
-            set { fiyat = value; }
-        }
 
     }
 }
