@@ -15,36 +15,14 @@ namespace WTWP_Project_2.ClassLayer
         }
 
 
-        int producerID;
-        public int ProducerID
+        private Uretici uretici;
+
+        public Uretici Uretici
         {
-            get { return producerID; }
-            set { producerID = value; }
+            get { return uretici; }
+            set { uretici = value; }
         }
 
-
-        string model;
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
-
-
-        int type;
-        public int Type
-        {
-            get { return type; }
-            set { type = value; }
-        }
-
-
-        int sex;
-        public int Sex
-        {
-            get { return sex; }
-            set { sex = value; }
-        }
 
 
         string description;
@@ -63,13 +41,6 @@ namespace WTWP_Project_2.ClassLayer
         }
 
         string urunURL;
-        private int urunID;
-
-        public Urun(int urunID)
-        {
-            // TODO: Complete member initialization
-            this.urunID = urunID;
-        }
 
         public string UrunURL
         {

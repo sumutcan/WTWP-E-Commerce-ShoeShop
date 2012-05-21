@@ -83,6 +83,11 @@ namespace WTWP_Project_2.ClassLayer
 
         }
 
+        public int sepettekiElemanSayisi()
+        {
+            return sepet.Count;
+        }
+
         public void sepetiKaydet()
         {
             if (this.sepet.Count > 0)

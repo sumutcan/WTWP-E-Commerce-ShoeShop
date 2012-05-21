@@ -32,9 +32,19 @@ namespace WTWP_Project_2
                 lnkKayitProfil.PostBackUrl = "~/Profil.aspx";
 
                 pnlSepet.Visible = true;
+
+                
+                lblSepettekiUrunMiktari.Text = (Session[Misc.GecerliKullanici] as Kullanici).sepettekiElemanSayisi().ToString();
+
+                
             }
+
+            
+        
+            
         }
 
+        
 
     }
 }
