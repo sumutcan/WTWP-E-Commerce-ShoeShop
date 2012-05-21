@@ -65,6 +65,18 @@ namespace WTWP_Project_2.ClassLayer
         }
 
         private double fiyat;
+        private int urunID;
+
+        public Urun(int urunID)
+        {
+            // TODO: Complete member initialization
+            this.urunID = urunID;
+        }
+
+        public Urun()
+        {
+            // TODO: Complete member initialization
+        }
 
         public double Fiyat
         {
