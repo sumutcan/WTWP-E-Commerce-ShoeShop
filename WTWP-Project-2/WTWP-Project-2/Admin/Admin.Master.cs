@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WTWP_Project_2.ClassLayer;
+using WTWP_Project_2.DataAccessLayer;
 
 namespace WTWP_Project_2.Admin
 {
@@ -11,7 +13,10 @@ namespace WTWP_Project_2.Admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session[Misc.GecerliKullanici] == null || !(Session[Misc.GecerliKullanici] is Adm))
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

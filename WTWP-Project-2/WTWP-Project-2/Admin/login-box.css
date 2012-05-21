@@ -24,7 +24,7 @@
 	float: left;
 	display:inline;
 	width:80px;
-	text-align: right;
+	text-align: left;
 	padding: 14px 10px 0 0;
 	margin:0 0 7px 0;
 }
@@ -35,6 +35,7 @@
 	width:230px;
 	margin:0;
 	margin:0 0 7px 0;
+    text-align: right;
 }
 
 

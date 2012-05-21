@@ -110,6 +110,7 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ClassLayer\Adm.cs" />
     <Compile Include="ClassLayer\Adres.cs" />
     <Compile Include="ClassLayer\GecersizOturumException.cs" />
     <Compile Include="ClassLayer\Kampanya.cs" />
@@ -121,6 +122,7 @@
     <Compile Include="ClassLayer\OdemeTipi.cs" />
     <Compile Include="ClassLayer\Telefon.cs" />
     <Compile Include="ClassLayer\Urun.cs" />
+    <Compile Include="DataAccessLayer\AdminDB.cs" />
     <Compile Include="DataAccessLayer\DBConnection.cs" />
     <Compile Include="DataAccessLayer\KullaniciDB.cs" />
     <Compile Include="DataAccessLayer\SepetDB.cs" />
