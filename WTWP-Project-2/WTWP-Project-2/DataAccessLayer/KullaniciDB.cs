@@ -190,7 +190,7 @@ namespace WTWP_Project_2.DataAccessLayer
                 kullanici.ID = num.Current.Pno;
                 kullanici.Ad = num.Current.Name;
                 kullanici.Soyad = num.Current.Surname;
-                kullanici.Sifre = num.Current.Password;
+                
                 kullanici.Email = num.Current.Email;
                 kullanicilar.Add(kullanici);
             }

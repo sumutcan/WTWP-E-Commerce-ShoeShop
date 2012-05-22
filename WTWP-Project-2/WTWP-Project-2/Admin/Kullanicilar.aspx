@@ -35,13 +35,13 @@
 
                              <ItemTemplate>
                                                             <tr>
-                                    <td class="align-center"><%#Eval("Pno") %></td>
-                                    <td><%#Eval("Name") %></td>
-                                    <td><%#Eval("Surname") %></td>
+                                    <td class="align-center"><%#Eval("ID") %></td>
+                                    <td><%#Eval("Ad") %></td>
+                                    <td><%#Eval("Soyad") %></td>
                                     <td><%#Eval("Email") %></td>
                                  
                                     <td>
-                                        <a href='<%#Eval("Id","KullaniciYonetimi.aspx?ID={0}&Pid=0")%>'><img src="bin.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/bin.gif" width="16" height="16" alt="delete" /></a>
+                                        <a href='<%#Eval("ID","Kullanicilar.aspx?ID={0}&Pid=0")%>'><img src="bin.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/bin.gif" width="16" height="16" alt="delete" /></a>
                                     </td>
                                 </tr>
                              
