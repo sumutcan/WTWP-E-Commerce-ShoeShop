@@ -68,6 +68,7 @@
     <Content Include="DetayGoruntule.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Karsilastir.aspx" />
     <Content Include="Kayit.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Karsilastir.aspx.cs">
+      <DependentUpon>Karsilastir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Karsilastir.aspx.designer.cs">
+      <DependentUpon>Karsilastir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kayit.aspx.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>

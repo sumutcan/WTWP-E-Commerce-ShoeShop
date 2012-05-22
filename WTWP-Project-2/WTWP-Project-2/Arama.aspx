@@ -62,7 +62,7 @@
                                             <td valign="middle" align="center"><div style="float:right; margin-top:5px;">
                                             <asp:UpdatePanel runat="server" ID="updateSepeteEkle">
                                             <ContentTemplate>
-                                            <asp:LinkButton runat="server" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("SatilanUrunID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
+                                            <asp:LinkButton runat="server" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("SatilanUrunID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir" CommandArgument='<%#Eval("SatilanUrunID")%>' CommandName="Karsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
                                             </ContentTemplate>
               
                                             </asp:UpdatePanel>

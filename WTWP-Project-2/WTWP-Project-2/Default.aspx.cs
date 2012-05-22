@@ -60,6 +60,16 @@ namespace WTWP_Project_2
                 ((Literal)Page.Master.FindControl("lblSepettekiUrunMiktari")).Text = (Session[Misc.GecerliKullanici] as Kullanici).sepettekiElemanSayisi().ToString();
 
             }
+            else if (e.CommandName == "Karsilastir")
+            {
+
+
+                SatilanUrun u = new SatilanUrun();
+                u.SatilanUrunID = Convert.ToInt32(e.CommandArgument);
+                (Session[Misc.Karsilastirilacaklar] as ArrayList).Add(u);
+
+
+            }
 
 
         }
