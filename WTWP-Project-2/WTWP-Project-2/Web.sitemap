@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
-    <siteMapNode url="" title=""  description="">
-        <siteMapNode url="" title=""  description="" />
-        <siteMapNode url="" title=""  description="" />
+  <siteMapNode url="Default.aspx" title="Anasayfa"  description="Anasayfa">
+    <siteMapNode url="Arama.aspx" title="Arama"  description="" ></siteMapNode>
+
+    <siteMapNode url="SizeOzel.aspx" title="Size özel öneriler"  description="" >
+  </siteMapNode>
     </siteMapNode>
 </siteMap>

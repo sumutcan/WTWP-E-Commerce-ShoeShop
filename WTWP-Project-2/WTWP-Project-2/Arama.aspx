@@ -1,10 +1,12 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="Default.aspx.cs" Inherits="WTWP_Project_2._Default" %>
-
-<asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Arama.aspx.cs" Inherits="WTWP_Project_2.Arama" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
-<asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
-    <asp:ListView runat="server" ID="lstTOP5" 
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <h3>Ürün Arama</h3>
+    <center><asp:TextBox ID="txtArama" runat="server"></asp:TextBox><asp:Button ID="btnArama"
+        runat="server" Text="Ara" /></center>
+
+           <asp:ListView runat="server" ID="lstTOP5" 
         onselectedindexchanged="lstTOP5_SelectedIndexChanged" 
         onitemdatabound="lstTOP5_ItemDataBound" 
         onlayoutcreated="lstTOP5_LayoutCreated" onitemcommand="lstTOP5_ItemCommand">
@@ -60,7 +62,7 @@
                                             <td valign="middle" align="center"><div style="float:right; margin-top:5px;">
                                             <asp:UpdatePanel runat="server" ID="updateSepeteEkle">
                                             <ContentTemplate>
-                                            <asp:LinkButton runat="server" OnClick="lnkSepeteEkle_Click" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("SatilanUrunID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir" CommandName="Karsilastir" CommandArgument='<%#Eval("SatilanUrunID")%>'><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
+                                            <asp:LinkButton runat="server" ID="lnkSepeteEkle" CommandName="SepeteEkle" CommandArgument='<%#Eval("SatilanUrunID")%>' CssClass="aSatinAl"><div class="btnSatinAl">Sepete Ekle</div></asp:LinkButton></div> <div style="margin-top:5px; position:relative; float:right;"><asp:LinkButton CssClass="aSatinAl" runat="server" ID = "lnkKarsilastir" CommandArgument='<%#Eval("SatilanUrunID")%>' CommandName="Karsilastir"><div class="btnSatinAl">Karşılaştır</div></asp:LinkButton>
                                             </ContentTemplate>
               
                                             </asp:UpdatePanel>

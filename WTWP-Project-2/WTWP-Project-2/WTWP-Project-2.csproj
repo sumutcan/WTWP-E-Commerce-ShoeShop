@@ -63,11 +63,13 @@
     <Content Include="Admin\images\login-btn.png" />
     <Content Include="Admin\login-box.css" />
     <Content Include="Admin\Login.aspx" />
-    <Content Include="Admin\Urunler.aspx" />
+    <Content Include="Arama.aspx" />
     <Content Include="Admin\Kullanici.aspx" />
     <Content Include="Default.aspx" />
+    <Content Include="DetayGoruntule.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Karsilastir.aspx" />
     <Content Include="Kayit.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
@@ -112,12 +114,12 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Urunler.aspx.cs">
-      <DependentUpon>Urunler.aspx</DependentUpon>
+    <Compile Include="Arama.aspx.cs">
+      <DependentUpon>Arama.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Urunler.aspx.designer.cs">
-      <DependentUpon>Urunler.aspx</DependentUpon>
+    <Compile Include="Arama.aspx.designer.cs">
+      <DependentUpon>Arama.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Kullanici.aspx.cs">
       <DependentUpon>Kullanici.aspx</DependentUpon>
@@ -152,6 +154,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DetayGoruntule.aspx.cs">
+      <DependentUpon>DetayGoruntule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetayGoruntule.aspx.designer.cs">
+      <DependentUpon>DetayGoruntule.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Error.aspx.cs">
       <DependentUpon>Error.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -161,6 +170,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Karsilastir.aspx.cs">
+      <DependentUpon>Karsilastir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Karsilastir.aspx.designer.cs">
+      <DependentUpon>Karsilastir.aspx</DependentUpon>
     </Compile>
     <Compile Include="Kayit.aspx.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>

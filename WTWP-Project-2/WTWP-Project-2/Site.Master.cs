@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using WTWP_Project_2.ClassLayer;
+using System.Collections;
 
 namespace WTWP_Project_2
 {
@@ -39,6 +40,13 @@ namespace WTWP_Project_2
                 }
                 catch { }
                 
+            }
+            if (Session[Misc.Karsilastirilacaklar] == null)
+                Session[Misc.Karsilastirilacaklar] = new ArrayList();
+
+            if ((Session[Misc.Karsilastirilacaklar] as ArrayList).Count == 2)
+            {
+                Response.Redirect("~/Karsilastir.aspx", false);
             }
 
             

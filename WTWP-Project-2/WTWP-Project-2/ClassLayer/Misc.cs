@@ -15,6 +15,7 @@ namespace WTWP_Project_2.ClassLayer
 
         public const string GecerliKullanici = "GecerliKullanici";
         public const string KullaniciIslemleriHandler = "KullaniciIslemleriHandler";
+        public const string Karsilastirilacaklar = "Karsilastirilacaklar";
 
         public static Misc getInstance()
         {
