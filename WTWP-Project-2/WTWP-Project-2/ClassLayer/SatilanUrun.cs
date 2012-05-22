@@ -47,6 +47,14 @@ namespace WTWP_Project_2.ClassLayer
             set { fiyat = value; }
         }
 
+        private int stok;
+
+        public int Stok
+        {
+            get { return stok; }
+            set { stok = value; }
+        }
+
         
     }
 }

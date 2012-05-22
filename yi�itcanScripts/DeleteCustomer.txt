@@ -1,0 +1,14 @@
+USE [SHOESHOP]
+GO
+ Object  StoredProcedure [dbo].[DeleteCart]    Script Date 05222012 040906 
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create proc [dbo].[DeleteCustomer]
+(
+	@pno int
+)
+AS
+DELETE FROM CUSTOMER WHERE Pno = @pno
+DELETE FROM PERSON WHERE Pno = @pno

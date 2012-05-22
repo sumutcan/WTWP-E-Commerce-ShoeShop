@@ -115,6 +115,9 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+
+    <form id="form1" runat="server">
+    
         <div id="header">
             <!-- Header. Status part -->
             <div id="header-status">
@@ -123,10 +126,8 @@
 					&nbsp;
                     </div>
                     <div class="grid_4">
-                        <a href="" id="logout">
-                        Çıkış
-                        </a>
                     </div>
+                        <asp:LinkButton ID="lbtnCikis" runat="server" onclick="lbtnCikis_Click">Çıkış</asp:LinkButton>
                 </div>
                 <div style="clear:both;"></div>
             </div> <!-- End #header-status -->
@@ -137,9 +138,9 @@
                     <div class="grid_12">
                         <div id="logo">
                             <ul id="nav">
-                                <li id="current"><a href="">Kullanıcılar</a></li>
-                                <li><a href="">Ürünler</a></li>
-                                <li><a href="">Kategoriler</a></li>
+                                <li id="current"><a href="Default.aspx">Ana Sayfa</a></li>
+                                <li><a href="Urunler.aspx">Ürünler</a></li>
+                                <li><a href="Kullanicilar.aspx">Kullanıcılar</a></li>
                                 <li><a href="">Kampanyalar</a></li>
                                 <li><a href="">Raporlama</a></li>
                             </ul>
@@ -150,8 +151,6 @@
             </div> <!-- End #header-main -->
             </div>
 
-    <form id="form1" runat="server">
-    
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>

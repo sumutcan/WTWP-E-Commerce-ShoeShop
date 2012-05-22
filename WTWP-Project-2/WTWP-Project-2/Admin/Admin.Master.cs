@@ -18,5 +18,11 @@ namespace WTWP_Project_2.Admin
                 Response.Redirect("Login.aspx");
             }
         }
+
+        protected void lbtnCikis_Click(object sender, EventArgs e)
+        {
+            Session[Misc.GecerliKullanici] = null;
+            Response.Redirect("Login.aspx");
+        }
     }
 }

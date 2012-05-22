@@ -46,7 +46,15 @@ namespace WTWP_Project_2.DataAccessLayer
 
         public static void sil(int id)
         {
-            throw new NotImplementedException();
+            try
+            {
+                DBConnection db = new DBConnection();
+                db.ConnectDB.DeleteCustomer(id);
+                db.ConnectDB.SaveChanges();
+            }
+            catch (EntityCommandExecutionException entityEx)
+            {
+            }
         }
 
         public static void guncelle(Kullanici obj)
@@ -167,6 +175,19 @@ namespace WTWP_Project_2.DataAccessLayer
 
             
         }
+
+        public static void tumunuCek()
+        {
+            try
+            {
+                DBConnection db = new DBConnection();
+                db.ConnectDB.tumKullanicilariCek();
+            }
+            catch (EntityCommandExecutionException entityEx)
+            {
+            }
+        }
+
 
         public static void profilBilgileriniGuncelle(Kullanici kullanici)
         {
