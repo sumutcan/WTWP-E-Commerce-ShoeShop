@@ -33,8 +33,11 @@ namespace WTWP_Project_2
 
                 pnlSepet.Visible = true;
 
-                
-                lblSepettekiUrunMiktari.Text = (Session[Misc.GecerliKullanici] as Kullanici).sepettekiElemanSayisi().ToString();
+                try
+                {
+                    lblSepettekiUrunMiktari.Text = (Session[Misc.GecerliKullanici] as Kullanici).sepettekiElemanSayisi().ToString();
+                }
+                catch { }
 
                 
             }

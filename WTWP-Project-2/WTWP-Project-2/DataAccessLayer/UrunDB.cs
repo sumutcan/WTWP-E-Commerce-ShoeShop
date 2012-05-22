@@ -35,5 +35,30 @@ namespace WTWP_Project_2.DataAccessLayer
             }
             return satilanUrunler;
         }
+
+        public static ArrayList urunAra(string kriter)
+        {
+            ArrayList satilanUrunler = new ArrayList();
+
+            foreach (SearchProduct_Result product in new DBConnection().ConnectDB.SearchProduct(kriter))
+            {
+                SatilanUrun satilanUrun = new SatilanUrun();
+                Urun urun = new Urun();
+                urun.ProductID = product.ProductID;
+                satilanUrun.Numara = product.Size;
+                Uretici uretici = new Uretici();
+                uretici.Ad = product.ProducerName;
+                urun.Uretici = uretici;
+                urun.Description = product.Description;
+                satilanUrun.Fiyat = product.PricePerPiece;
+                satilanUrun.Renk = product.Color;
+
+                satilanUrun.Urun = urun;
+                satilanUrun.SatilanUrunID = product.StockID;
+
+                satilanUrunler.Add(satilanUrun);
+            }
+            return satilanUrunler;
+        }
     }
 }
