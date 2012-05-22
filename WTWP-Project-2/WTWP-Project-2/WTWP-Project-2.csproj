@@ -64,7 +64,7 @@
     <Content Include="Admin\login-box.css" />
     <Content Include="Admin\Login.aspx" />
     <Content Include="Admin\Urunler.aspx" />
-    <Content Include="Admin\Kullanicilar.aspx" />
+    <Content Include="Admin\Kullanici.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Error.aspx" />
     <Content Include="Global.asax" />
@@ -119,12 +119,12 @@
     <Compile Include="Admin\Urunler.aspx.designer.cs">
       <DependentUpon>Urunler.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Kullanicilar.aspx.cs">
-      <DependentUpon>Kullanicilar.aspx</DependentUpon>
+    <Compile Include="Admin\Kullanici.aspx.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\Kullanicilar.aspx.designer.cs">
-      <DependentUpon>Kullanicilar.aspx</DependentUpon>
+    <Compile Include="Admin\Kullanici.aspx.designer.cs">
+      <DependentUpon>Kullanici.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClassLayer\Adm.cs" />
     <Compile Include="ClassLayer\Adres.cs" />

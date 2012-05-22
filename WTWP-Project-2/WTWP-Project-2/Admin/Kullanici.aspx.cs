@@ -8,9 +8,11 @@ using WTWP_Project_2.DataAccessLayer;
 
 namespace WTWP_Project_2.Admin
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class WebForm3 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+            protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
@@ -23,8 +25,9 @@ namespace WTWP_Project_2.Admin
                     
             }
             lstKullanicilar.Items.Clear();
-            lstKullanicilar.DataSource = KullaniciDB.TumKullanicilariCek();
+            lstKullanicilar.DataSource = KullaniciDB.tumunuCek();
             lstKullanicilar.DataBind();
+        }
         }
     }
 }

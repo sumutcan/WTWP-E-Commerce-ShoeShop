@@ -1,10 +1,10 @@
 USE [SHOESHOP]
 GO
-/****** Object:  StoredProcedure [dbo].[DeleteCart]    Script Date: 05/22/2012 04:09:06 ******/
+/****** Object:  StoredProcedure [dbo].[TumKullanicilariCek]    Script Date: 05/22/2012 04:33:02 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-create proc [dbo].[TumKullanicilariCek]
+ALTER proc [dbo].[TumKullanicilariCek]
 AS
-SELECT * FROM CUSTOMER
+SELECT * FROM CUSTOMER,PERSON where CUSTOMER.Pno = PERSON.Pno

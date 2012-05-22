@@ -180,19 +180,18 @@ namespace WTWP_Project_2.DataAccessLayer
         public static ArrayList tumunuCek()
         {
             DBConnection cn = new DBConnection();
-            IEnumerator <CUSTOMER> num = cn.ConnectDB.TumKullanicilariCek().GetEnumerator();
+            IEnumerator<TumKullanicilariCek_Result> num = cn.ConnectDB.TumKullanicilariCek().GetEnumerator();
 
             ArrayList kullanicilar = new ArrayList();
 
             while (num.MoveNext())
             {
                 Kullanici kullanici = new Kullanici();
-                kullanici.ID = num.Current.Kullanici_ID;
-                kullanici.Ad = num.Current.Ad;
-                kullanici.Soyad = num.Current.Soyad;
-                kullanici.Sifre = num.Current.Sifre;
-                kullanici.Email = num.Current.Eposta;
-                kullanici.EvTel = num.Current.asd;
+                kullanici.ID = num.Current.Pno;
+                kullanici.Ad = num.Current.Name;
+                kullanici.Soyad = num.Current.Surname;
+                kullanici.Sifre = num.Current.Password;
+                kullanici.Email = num.Current.Email;
                 kullanicilar.Add(kullanici);
             }
 

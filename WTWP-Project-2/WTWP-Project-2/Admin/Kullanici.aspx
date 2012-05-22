@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Kullanicilar.aspx.cs" Inherits="WTWP_Project_2.Admin.WebForm2" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="Kullanici.aspx.cs" Inherits="WTWP_Project_2.Admin.WebForm3" %>
+<asp:Content ID="Content3" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content4" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Kullanıcı Yönetimi</h2>
                             
                 <asp:Panel runat="server" ID="pnlBasarili" Visible="false" EnableViewState="false"><span class="notification n-success" runat="server" id="spanBasarili">Başarılı işlemde buranın innerhtmli değişecek</span></asp:Panel>
@@ -19,9 +19,6 @@
                                     <th style="width:20%">Ad</th>
                                     <th style="width:21%">Soyad</th>
                                     <th style="width:13%">E-Posta</th>
-                                    <th style="width:13%">Doğum Tarihi</th>
-                                    <th style="width:13%">Ev Telefonu</th>
-                                    <th style="width:13%">Cep Telefonu</th>
                                     
                                     <th style="width:15%"></th>
                                 </tr>
@@ -42,9 +39,6 @@
                                     <td><%#Eval("Name") %></td>
                                     <td><%#Eval("Surname") %></td>
                                     <td><%#Eval("Email") %></td>
-                                    <td><%#Eval("YearOfBirth") %></td>
-                                    <td><%#Eval("HomePhoneID") %></td>
-                                    <td><%#Eval("MobilePhoneID")%></td>
                                  
                                     <td>
                                         <a href='<%#Eval("Id","KullaniciYonetimi.aspx?ID={0}&Pid=0")%>'><img src="bin.gif" tppabs="http://www.xooom.pl/work/magicadmin/images/bin.gif" width="16" height="16" alt="delete" /></a>

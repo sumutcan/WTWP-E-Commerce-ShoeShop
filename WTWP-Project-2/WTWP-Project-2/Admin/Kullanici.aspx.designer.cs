@@ -10,7 +10,7 @@
 namespace WTWP_Project_2.Admin {
     
     
-    public partial class WebForm2 {
+    public partial class WebForm3 {
         
         /// <summary>
         /// pnlBasarili control.

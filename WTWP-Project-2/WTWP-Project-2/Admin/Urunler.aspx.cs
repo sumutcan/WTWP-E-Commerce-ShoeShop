@@ -36,6 +36,7 @@ namespace WTWP_Project_2.Admin
             }
             lstUrunler.Items.Clear();
             lstUrunler.DataSource = UrunDB.TumUrunleriCek();
+            lstUrunler.DataSource = UrunDB.top5UrunGetir();
             lstUrunler.DataBind();
         }
 

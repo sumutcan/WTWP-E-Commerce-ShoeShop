@@ -140,7 +140,7 @@
                             <ul id="nav">
                                 <li id="current"><a href="Default.aspx">Ana Sayfa</a></li>
                                 <li><a href="Urunler.aspx">Ürünler</a></li>
-                                <li><a href="Kullanicilar.aspx">Kullanıcılar</a></li>
+                                <li><a href="Kullanici.aspx">Kullanıcılar</a></li>
                                 <li><a href="">Kampanyalar</a></li>
                                 <li><a href="">Raporlama</a></li>
                             </ul>
