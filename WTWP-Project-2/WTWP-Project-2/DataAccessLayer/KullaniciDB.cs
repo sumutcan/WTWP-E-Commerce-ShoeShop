@@ -5,6 +5,7 @@ using System.Web;
 using WTWP_Project_2.ClassLayer;
 using System.Data;
 using System.Data.SqlClient;
+using System.Collections;
 
 namespace WTWP_Project_2.DataAccessLayer
 {
@@ -176,16 +177,26 @@ namespace WTWP_Project_2.DataAccessLayer
             
         }
 
-        public static void tumunuCek()
+        public static ArrayList tumunuCek()
         {
-            try
+            DBConnection cn = new DBConnection();
+            IEnumerator <CUSTOMER> num = cn.ConnectDB.TumKullanicilariCek().GetEnumerator();
+
+            ArrayList kullanicilar = new ArrayList();
+
+            while (num.MoveNext())
             {
-                DBConnection db = new DBConnection();
-                db.ConnectDB.tumKullanicilariCek();
+                Kullanici kullanici = new Kullanici();
+                kullanici.ID = num.Current.Kullanici_ID;
+                kullanici.Ad = num.Current.Ad;
+                kullanici.Soyad = num.Current.Soyad;
+                kullanici.Sifre = num.Current.Sifre;
+                kullanici.Email = num.Current.Eposta;
+                kullanici.EvTel = num.Current.asd;
+                kullanicilar.Add(kullanici);
             }
-            catch (EntityCommandExecutionException entityEx)
-            {
-            }
+
+            return kullanicilar;
         }
 
 
