@@ -47,7 +47,7 @@
                                 <td><table  border="0" cellspacing="0" cellpadding="0" style="width: 365px">
                                     <tr>
                                       <td height="24" align="left" valign="top" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><img alt=""  src="images/offer.jpg" width="109" height="15">
-                                          <%#Eval("Urun.Uretici.Ad")%></td>
+                                          <a href='<%#Eval("SatilanUrunID","/DetayGoruntule.aspx?ID={0}") %>'> <%#Eval("Urun.Uretici.Ad")%></a></td>
                                     </tr>
                                     <tr>
                                       <td height="40" align="left" valign="middle" class="style5" style="background-image:url(images/rep_1.jpg); background-position:bottom ; background-repeat:repeat-x "><%#Eval("Urun.Description") %></td>
