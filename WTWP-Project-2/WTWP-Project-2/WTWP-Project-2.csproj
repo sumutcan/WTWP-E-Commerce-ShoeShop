@@ -71,6 +71,7 @@
     <Content Include="Global.asax" />
     <Content Include="Karsilastir.aspx" />
     <Content Include="Kayit.aspx" />
+    <Content Include="Admin\Kullanicilar.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Logout.aspx" />
     <Content Include="niceforms-default.css" />
@@ -184,6 +185,13 @@
     </Compile>
     <Compile Include="Kayit.aspx.designer.cs">
       <DependentUpon>Kayit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Kullanicilar.aspx.cs">
+      <DependentUpon>Kullanicilar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Kullanicilar.aspx.designer.cs">
+      <DependentUpon>Kullanicilar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
