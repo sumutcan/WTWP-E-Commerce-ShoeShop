@@ -142,7 +142,7 @@
                                 <li><a href="Urunler.aspx">Ürünler</a></li>
                                 <li><a href="Kullanicilar.aspx">Kullanıcılar</a></li>
                                 <li><a href="">Kampanyalar</a></li>
-                                <li><a href="">Raporlama</a></li>
+                                <li><a href="Raporlama.aspx">Raporlama</a></li>
                             </ul>
                         </div><!-- End. #Logo -->
                     </div><!-- End. .grid_12-->

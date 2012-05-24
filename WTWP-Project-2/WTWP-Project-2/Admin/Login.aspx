@@ -13,7 +13,7 @@
     </div>
     <div id="login-box-field">
 Şifre:<asp:TextBox ID="TextBox2" runat="server" 
-            style="text-align: left" Width="100px"></asp:TextBox>
+            style="text-align: left" Width="100px" TextMode="Password"></asp:TextBox>
         <br />
     </div>
 

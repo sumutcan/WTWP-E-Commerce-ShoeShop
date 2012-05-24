@@ -55,6 +55,9 @@ namespace WTWP_Project_2.ClassLayer
             set { stok = value; }
         }
 
-        
+        public SatilanUrun()
+        {
+            Urun = new Urun();
+        }
     }
 }

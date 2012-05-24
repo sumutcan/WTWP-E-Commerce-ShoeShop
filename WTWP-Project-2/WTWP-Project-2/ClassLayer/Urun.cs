@@ -19,6 +19,14 @@ namespace WTWP_Project_2.ClassLayer
             }
         }
 
+        private char cinsiyet;
+
+        public char Cinsiyet
+        {
+            get { return cinsiyet; }
+            set { cinsiyet = value; }
+        }
+
 
         private Uretici uretici;
 
@@ -61,8 +69,8 @@ namespace WTWP_Project_2.ClassLayer
         }
 
         public Urun()
-        { 
-        
+        {
+            uretici = new Uretici();
         }
 
 

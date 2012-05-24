@@ -38,6 +38,9 @@
       <HintPath>bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
@@ -63,8 +66,9 @@
     <Content Include="Admin\images\login-btn.png" />
     <Content Include="Admin\login-box.css" />
     <Content Include="Admin\Login.aspx" />
+    <Content Include="Admin\Raporlama.aspx" />
+    <Content Include="Admin\Urunler.aspx" />
     <Content Include="Arama.aspx" />
-    <Content Include="Admin\Kullanici.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="DetayGoruntule.aspx" />
     <Content Include="Error.aspx" />
@@ -115,19 +119,26 @@
     <Compile Include="Admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Raporlama.aspx.cs">
+      <DependentUpon>Raporlama.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Raporlama.aspx.designer.cs">
+      <DependentUpon>Raporlama.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Urunler.aspx.cs">
+      <DependentUpon>Urunler.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Urunler.aspx.designer.cs">
+      <DependentUpon>Urunler.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Arama.aspx.cs">
       <DependentUpon>Arama.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Arama.aspx.designer.cs">
       <DependentUpon>Arama.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Kullanici.aspx.cs">
-      <DependentUpon>Kullanici.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Admin\Kullanici.aspx.designer.cs">
-      <DependentUpon>Kullanici.aspx</DependentUpon>
     </Compile>
     <Compile Include="ClassLayer\Adm.cs" />
     <Compile Include="ClassLayer\Adres.cs" />
@@ -215,6 +226,11 @@
       <DependentUpon>Profil.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SHOESHOPDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SHOESHOPDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ShoeShopEntity.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -256,6 +272,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin\Report1.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SHOESHOPDataSet.xsc">
+      <DependentUpon>SHOESHOPDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SHOESHOPDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SHOESHOPDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SHOESHOPDataSet.xss">
+      <DependentUpon>SHOESHOPDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

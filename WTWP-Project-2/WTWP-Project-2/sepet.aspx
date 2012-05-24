@@ -4,7 +4,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
         <div class="module-table-body">
 
-                             <asp:ListView ID="lstSepet" runat="server">
+                             <asp:ListView ID="lstSepet" runat="server" 
+                                 onitemdeleting="lstSepet_ItemDeleting" 
+                                 onitemcommand="lstSepet_ItemCommand">
                              <LayoutTemplate>
                                 <table id="myTable" class="tablesorter">
                                                       	<thead>
@@ -12,7 +14,7 @@
                                                      <td class="style9" height="25" 
                                                          style="border-bottom:1px solid #DBDBDB; border-right:1px solid #DBDBDB" 
                                                          width="94">
-                                                         remote</td>
+                                                         Seç</td>
                                                      <td class="style9" 
                                                          style="border-bottom:1px solid #DBDBDB; border-right:1px solid #DBDBDB" 
                                                          width="180">
@@ -52,18 +54,27 @@
                                                          <asp:CheckBox ID="CheckBox1" runat="server" /></td>
                                                      <td style="border-bottom:1px solid #DBDBDB; border-right:1px solid #DBDBDB">
                                                          <a href="Buraya ürünün sayfasının linki gelecek bir şekilde...">
-                                                         <img alt="" border="0" height="76" src="<%#Eval("ImageURL") %>" width="93" /></a></td>
+                                                         <img alt="" border="0" height="76" src="<%#(((WTWP_Project_2.ClassLayer.SatilanUrun)Eval("Value")).Urun.UrunURL) %>" width="93" /></a></td>
                                                      <td style="border-bottom:1px solid #DBDBDB; border-right:1px solid #DBDBDB">
-                                                         <asp:TextBox ID="txtAdet" runat="server" Width="30px"></asp:TextBox></td>
+                                                         <asp:TextBox ID="txtAdet" runat="server" Width="30px" OnTextChanged="txtAdet_TextChanged" AutoPostBack="true"></asp:TextBox></td>
                                                      <td style="border-bottom:1px solid #DBDBDB; border-right:0px solid #DBDBDB">
-                                                         <span class="style7"><strong>$ <span class="style8">
-                                                             <asp:Label ID="lblBirimFiyat" runat="server" Text=<%#Eval("PricePerPiece") %>></asp:Label></span></strong></span></td>
+                                                         <span class="style7"><strong>TL <span class="style8">
+                                                             <asp:Label ID="lblBirimFiyat" runat="server" Text='<%#(((WTWP_Project_2.ClassLayer.SatilanUrun)Eval("Value")).Fiyat) %>'></asp:Label></span></strong></span></td>
                                                      <td style="border-bottom:1px solid #DBDBDB; border-right:0px solid #DBDBDB">
-                                                         <span class="style7"><strong>$ <span class="style8">
-                                                             <asp:Label ID="lblFiyat" runat="server" Text="--"></asp:Label></span></strong></span>
+                                                         <span class="style7"><strong>TL <span class="style8">
+                                                             <asp:UpdatePanel runat="server">
+                                                             <ContentTemplate>
+                                                             <asp:Label ID="lblSubFiyat" runat="server" Text="--"></asp:Label>
+                                                             </ContentTemplate>
+                                                             <Triggers>
+                                                             <asp:AsyncPostBackTrigger ControlID="txtAdet" EventName="TextChanged" />
+                                                             </Triggers>
+                                                             </asp:UpdatePanel>
+                                                             
+                                                             </span></strong></span>
                                                      </td>
                                                      <td>
-                                                        <a href='<%#Eval("ProductID","sepet.aspx?ID={0}&Pid=0")%>'><img width="16" height="16" alt="delete" src="http://cdn1.iconfinder.com/data/icons/softwaredemo/PNG/16x16/DeleteRed.png" /></a>
+                                                        <asp:LinkButton ID="lnkUrunCikar" runat="server" CommandName="UrunCikar"><img width="16" height="16" alt="delete" src="http://cdn1.iconfinder.com/data/icons/softwaredemo/PNG/16x16/DeleteRed.png" /></asp:LinkButton>
                                     </td>
                                     </tr>
                                 </tr>
@@ -83,7 +94,15 @@
                             <td width="121"><asp:Button ID="btnDevam" runat="server" Text="Devam" 
                                     BackColor="#009933" Font-Bold="True" Font-Names="Calibri" ForeColor="White" /></td>
                             <td class="style9">sub-Total: <span class="style7"><strong>$ <span class="style8">
-                                <asp:Label ID="lblNetToplam" runat="server" Text="--"></asp:Label></span></strong></span></td>
+                                <asp:UpdatePanel runat="server">
+                                <ContentTemplate>
+                                <asp:Label ID="lblNetToplam" runat="server" Text="0"></asp:Label>
+                                </ContentTemplate>
+                                
+                                
+                                
+                                </asp:UpdatePanel>
+                                </span></strong></span></td>
                             </tr>
                             </table>
                         </div>

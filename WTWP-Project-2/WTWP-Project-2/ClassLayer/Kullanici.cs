@@ -100,5 +100,13 @@ namespace WTWP_Project_2.ClassLayer
             this.sepet = KullaniciDB.kayitliSepetiGetir(this.ID);
          
         }
+
+        public Dictionary<int, SatilanUrun> Sepet 
+        {
+            get
+            {
+                return sepet;
+            }
+        }
     }
 }

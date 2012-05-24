@@ -35,7 +35,7 @@
                         <td width="242" style="border-right:1px solid #DBDBDB "><div style="padding-left:0px; padding-top:2px; padding-bottom:10px">
                             <table border="0" cellspacing="0" cellpadding="0" style="width: 465px">
                               <tr align="left" valign="top">
-                                <td width="98"><div style="padding-left:0px; padding-top:29px"><a href="#"><img alt=""  src="images/ca_1.jpg" width="91" height="55" border="0"></a></div>
+                                <td width="98"><div style="padding-left:0px; padding-top:29px"><a href="#"><img alt=""  src='<%#Eval("Urun.UrunURL") %>' width="91" height="55" border="0"></a></div>
                                     <div style="padding-left:18px; padding-top:22px">
                                       <table width="55"  border="0" cellspacing="0" cellpadding="0">
                                         <tr align="left" valign="middle">

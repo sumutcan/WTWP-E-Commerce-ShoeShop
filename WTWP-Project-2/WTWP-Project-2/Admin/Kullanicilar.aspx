@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <h2>Kullanıcı Yönetimi</h2>
+    <h2>Kullanıcı Yönetimi</h2>
                             
                 <asp:Panel runat="server" ID="pnlBasarili" Visible="false" EnableViewState="false"><span class="notification n-success" runat="server" id="spanBasarili">Başarılı işlemde buranın innerhtmli değişecek</span></asp:Panel>
                 <asp:Panel runat="server" ID="pnlHata" Visible="false" EnableViewState="false"><span class="notification n-error" runat="server" id="span1">Hatalı işlemde buranın innerhtmli değişecek</span></asp:Panel>
@@ -29,9 +29,7 @@
                                </table>
                              </LayoutTemplate>
 
-                                <ItemSeparatorTemplate>
-                                        <hr />
-                                </ItemSeparatorTemplate>
+
 
                              <ItemTemplate>
                                                             <tr>
